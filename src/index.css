@@ -1,0 +1,114 @@
+/* src/index.css */
+/* Import fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+/* Then import Tailwind - IMPORTANT: using the correct method for the Vite plugin approach */
+@import "tailwindcss";
+
+/* Custom base styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+}
+
+/* Luxury utility classes */
+.font-heading {
+  font-family: 'Cinzel', serif;
+}
+
+.font-subheading {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 100% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Animation delays */
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Luxury button styles */
+.btn-luxury {
+  padding: 0.75rem 2rem;
+  transition: all 0.3s;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+}
+
+.btn-luxury-primary {
+  background-color: #92400e;
+  color: white;
+  border: 1px solid #92400e;
+}
+
+.btn-luxury-primary:hover {
+  background-color: transparent;
+  color: #92400e;
+}
+
+.btn-luxury-secondary {
+  background-color: transparent;
+  color: #92400e;
+  border: 1px solid #92400e;
+}
+
+.btn-luxury-secondary:hover {
+  background-color: #92400e;
+  color: white;
+}
+
+/* Section styling */
+.section-luxury {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Image effects */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom {
+  transition: transform 0.7s;
+}
+
+.img-zoom:hover {
+  transform: scale(1.1);
+}
