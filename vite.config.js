@@ -8,6 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/harrico/',
+  base: '/',
   assetsInclude: ['**/*.JPG'] // Add this line to include JPG files
 })
