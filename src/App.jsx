@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import LoadingScreen from './components/common/LoadingScreen';
