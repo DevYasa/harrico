@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 // Import your jewelry images
-import SapphireRing from '../../assets/images/hero/bg3.jpg'; // Blue sapphire ring with diamonds
-import DiamondRing from '../../assets/images/hero/bg4.jpg'; // Diamond engagement ring
+import SapphireRing from '../../assets/images/hero/bg8.jpg'; // Blue sapphire ring with diamonds
+import DiamondRing from '../../assets/images/hero/bg9.jpg'; // Diamond engagement ring
 import JewelryBoutique1 from '../../assets/images/hero/bg2.jpeg'; // Luxury store with display cases
 import JewelryBoutique2 from '../../assets/images/hero/bg1.jpeg'; // Elegant store with gold lighting
-import LuxuryShowroom from '../../assets/images/hero/bg.jpg'; // High-end showroom with gold trim
+import LuxuryShowroom from '../../assets/images/hero/bg7.jpg'; // High-end showroom with gold trim
+// Import your logo
+import Logo from '../../assets/images/logo.png'; // Your logo image
+// You'll need to add these images to your project
+import GemMining from '../../assets/images/hero/mining1.jpg'; // Gem mining image
+// import GemManufacturing from '../../assets/images/hero/gem-manufacturing.jpg'; // Gem manufacturing image
 
 const EnhancedHeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,39 +20,47 @@ const EnhancedHeroSection = () => {
   
   const slides = [
     {
-      image: JewelryBoutique2,
-      title: 'BESPOKE JEWELRY DESIGN',
-      subtitle: 'CUSTOM CREATIONS',
-      description: 'Let our master artisans create a unique piece tailored to your vision and preferences',
-      cta: 'Start Your Design'
-    },
-    {
-      image: JewelryBoutique1,
-      title: 'VISIT OUR BOUTIQUE',
-      subtitle: 'LUXURY EXPERIENCE',
-      description: 'Experience our world of luxury at our flagship boutique in Kuala Lumpur',
-      cta: 'Book Appointment'
-    },
-    {
-      image: DiamondRing,
-      title: 'TIMELESS DIAMOND CREATIONS',
-      subtitle: 'BRILLIANCE & CLARITY',
-      description: 'Masterfully crafted diamond jewelry featuring stones of exceptional cut, color and clarity',
-      cta: 'View Collection'
-    },
-    {
-      image: LuxuryShowroom,
-      title: 'EXCLUSIVE COLLECTIONS',
-      subtitle: 'UNPARALLELED ELEGANCE',
-      description: 'Explore our curated selection of fine jewelry, featuring only the highest quality gemstones',
-      cta: 'Discover More'
+      image: LuxuryShowroom, // Replace with a better background for logo+gems slide
+      title: 'HARRICO CEYLON GEMS & JEWELS',
+      subtitle: 'LUXURY & EXCELLENCE',
+      description: 'Discover the finest Ceylon gems and exquisite jewelry crafted with unparalleled expertise and passion',
+      cta: 'Explore Our Collections',
+      hasLogo: true // Special flag for the first slide with logo
     },
     {
       image: SapphireRing,
-      title: 'EXCEPTIONAL CEYLON SAPPHIRES',
+      title: 'EXCEPTIONAL CEYLON GEMS',
       subtitle: 'RARE & EXQUISITE',
-      description: 'Discover our collection of vibrant blue Ceylon sapphires set in handcrafted precious metal designs',
-      cta: 'Explore Sapphires'
+      description: 'Our premium selection features only the finest sapphires, rubies, and other precious gemstones from Ceylon',
+      cta: 'Discover Our Gems'
+    },
+    {
+      image: DiamondRing,
+      title: 'LUXURY JEWELRY COLLECTIONS',
+      subtitle: 'CRAFTSMANSHIP & DESIGN',
+      description: 'Masterfully crafted jewelry featuring stones of exceptional cut, color and clarity set in precious metals',
+      cta: 'View Collections'
+    },
+    {
+      image: JewelryBoutique1,
+      title: 'EXCLUSIVE BOUTIQUE EXPERIENCE',
+      subtitle: 'LUXURY & ELEGANCE',
+      description: 'Visit our flagship stores in Kuala Lumpur, Penang, and London for a personalized luxury experience',
+      cta: 'Find Our Locations'
+    },
+    {
+      image: GemMining, // Replace with actual gem mining image
+      title: 'CEYLON GEMS MINING',
+      subtitle: 'ETHICALLY SOURCED',
+      description: 'We ethically source our gemstones directly from the legendary mines of Sri Lanka, ensuring the highest quality',
+      cta: 'Learn About Our Sourcing'
+    },
+    {
+      image: LuxuryShowroom, // Replace with actual gem manufacturing image
+      title: 'GEM MANUFACTURING EXCELLENCE',
+      subtitle: 'PRECISION & ARTISTRY',
+      description: 'Our master craftsmen transform rough gemstones into brilliant treasures through expert cutting and polishing',
+      cta: 'Discover Our Process'
     }
   ];
 
@@ -148,6 +161,23 @@ const EnhancedHeroSection = () => {
                 
                 {/* Content - faster animations for quicker appearance */}
                 <div className="py-8 px-8">
+                  {/* Logo for first slide only */}
+                  {slide.hasLogo && (
+                    <div
+                      className="mx-auto mb-6 w-40 h-40"
+                      style={{ 
+                        opacity: 0, 
+                        animation: index === currentSlide ? 'fadeIn 0.6s ease forwards 0.1s' : 'none' 
+                      }}
+                    >
+                      <img 
+                        src={Logo} 
+                        alt="Harrico Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+                  
                   <h2 
                     className="font-subheading text-xl md:text-2xl lg:text-3xl mb-4 tracking-widest text-amber-300 opacity-90"
                     style={{ 
