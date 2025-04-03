@@ -15,18 +15,11 @@ const EnhancedHeroSection = () => {
   
   const slides = [
     {
-      image: SapphireRing,
-      title: 'EXCEPTIONAL CEYLON SAPPHIRES',
-      subtitle: 'RARE & EXQUISITE',
-      description: 'Discover our collection of vibrant blue Ceylon sapphires set in handcrafted precious metal designs',
-      cta: 'Explore Sapphires'
-    },
-    {
-      image: DiamondRing,
-      title: 'TIMELESS DIAMOND CREATIONS',
-      subtitle: 'BRILLIANCE & CLARITY',
-      description: 'Masterfully crafted diamond jewelry featuring stones of exceptional cut, color and clarity',
-      cta: 'View Collection'
+      image: JewelryBoutique2,
+      title: 'BESPOKE JEWELRY DESIGN',
+      subtitle: 'CUSTOM CREATIONS',
+      description: 'Let our master artisans create a unique piece tailored to your vision and preferences',
+      cta: 'Start Your Design'
     },
     {
       image: JewelryBoutique1,
@@ -36,11 +29,11 @@ const EnhancedHeroSection = () => {
       cta: 'Book Appointment'
     },
     {
-      image: JewelryBoutique2,
-      title: 'BESPOKE JEWELRY DESIGN',
-      subtitle: 'CUSTOM CREATIONS',
-      description: 'Let our master artisans create a unique piece tailored to your vision and preferences',
-      cta: 'Start Your Design'
+      image: DiamondRing,
+      title: 'TIMELESS DIAMOND CREATIONS',
+      subtitle: 'BRILLIANCE & CLARITY',
+      description: 'Masterfully crafted diamond jewelry featuring stones of exceptional cut, color and clarity',
+      cta: 'View Collection'
     },
     {
       image: LuxuryShowroom,
@@ -48,6 +41,13 @@ const EnhancedHeroSection = () => {
       subtitle: 'UNPARALLELED ELEGANCE',
       description: 'Explore our curated selection of fine jewelry, featuring only the highest quality gemstones',
       cta: 'Discover More'
+    },
+    {
+      image: SapphireRing,
+      title: 'EXCEPTIONAL CEYLON SAPPHIRES',
+      subtitle: 'RARE & EXQUISITE',
+      description: 'Discover our collection of vibrant blue Ceylon sapphires set in handcrafted precious metal designs',
+      cta: 'Explore Sapphires'
     }
   ];
 
