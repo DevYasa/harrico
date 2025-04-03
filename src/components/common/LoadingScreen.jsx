@@ -1,7 +1,6 @@
 // src/components/common/LoadingScreen.jsx
 import React, { useEffect } from 'react';
 import Logo from '../../assets/images/logo.png';
-// Import your background GIF - update the path to your actual GIF file
 import BackgroundGif from '../../assets/images/sapphire-waves1.gif';
 
 const LoadingScreen = () => {
@@ -9,15 +8,15 @@ const LoadingScreen = () => {
     // Add keyframe animations just for the logo shine effects
     const animations = document.createElement('style');
     animations.textContent = `
-      @keyframes scaleUp {
-        0% { transform: scale(0.2); opacity: 0; }
-        100% { transform: scale(1); opacity: 1; }
-      }
-
       @keyframes blueGlow {
         0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
         50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), 0 0 50px rgba(59, 130, 246, 0.4); }
         100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+      }
+
+      @keyframes singleScaleUp {
+        0% { transform: scale(0.2); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
       }
     `;
     
@@ -36,33 +35,28 @@ const LoadingScreen = () => {
       {/* Crystal Clear GIF Background */}
       <div className="absolute inset-0">
         <img 
-          // Replace this with your actual GIF path
           src={BackgroundGif}
           alt="Sapphire Waves" 
           className="w-full h-full object-cover"
         />
       </div>
       
-      {/* Larger Logo with blue shining effect */}
+      {/* Single Logo with blue shining effect */}
       <div className="relative z-10">
-        <div className="relative flex items-center justify-center">
-          {/* Logo container with blue glow - increased size */}
-          <div 
-            className="bg-black/75 backdrop-blur-sm rounded-full w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
+        <div 
+          className="bg-black/75 backdrop-blur-sm rounded-full w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
+          style={{
+            animation: 'blueGlow 3s infinite'
+          }}
+        >
+          <img 
+            src={Logo}
+            alt="Harrico Logo" 
+            className="w-40 h-40 md:w-52 md:h-52 object-contain"
             style={{
-              animation: 'scaleUp 1s ease-out forwards, blueGlow 3s infinite'
+              animation: 'singleScaleUp 1.2s ease-out forwards'
             }}
-          >
-            {/* Logo - increased size */}
-            <img 
-              src={Logo}
-              alt="Harrico Logo" 
-              className="w-40 h-40 md:w-52 md:h-52 object-contain"
-              style={{
-                animation: 'scaleUp 1.2s ease-out forwards'
-              }}
-            />
-          </div>
+          />
         </div>
       </div>
     </div>
