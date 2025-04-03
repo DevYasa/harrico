@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // Import your desktop images
 import SapphireRingDesktop from '../../assets/images/hero/desktop/bg8.jpg';
 import DiamondRingDesktop from '../../assets/images/hero/desktop/bg9.jpg';
-import JewelryBoutique1Desktop from '../../assets/images/hero/desktop/bg9.jpg';
+import JewelryBoutique1Desktop from '../../assets/images/hero/desktop/bg1.jpeg';
 import JewelryBoutique2Desktop from '../../assets/images/hero/desktop/bg1.jpeg';
 import LuxuryShowroomDesktop from '../../assets/images/hero/desktop/bg7.jpg';
 // Import your mobile images (these will be different, more vertically oriented versions)
@@ -15,9 +15,9 @@ import LuxuryShowroomMobile from '../../assets/images/hero/mobile/bg.jpg';
 // Import your logo
 import Logo from '../../assets/images/logo.png';
 // For new images like gem mining and manufacturing, follow the same pattern
-// import GemMiningDesktop from '../../assets/images/hero/desktop/gem-mining.jpg';
+import GemMiningDesktop from '../../assets/images/hero/desktop/bg10.jpg';
 // import GemMiningMobile from '../../assets/images/hero/mobile/gem-mining.jpg';
-// import GemManufacturingDesktop from '../../assets/images/hero/desktop/gem-manufacturing.jpg';
+import GemManufacturingDesktop from '../../assets/images/hero/desktop/bg11.jpg';
 // import GemManufacturingMobile from '../../assets/images/hero/mobile/gem-manufacturing.jpg';
 
 const EnhancedHeroSection = () => {
@@ -80,7 +80,7 @@ const EnhancedHeroSection = () => {
       cta: 'Find Our Locations'
     },
     {
-      desktopImage: JewelryBoutique2Desktop, // Replace with actual gem mining desktop image
+      desktopImage: GemMiningDesktop, // Replace with actual gem mining desktop image
       mobileImage: JewelryBoutique2Mobile, // Replace with actual gem mining mobile image
       title: 'CEYLON GEMS MINING',
       subtitle: 'ETHICALLY SOURCED',
@@ -88,7 +88,7 @@ const EnhancedHeroSection = () => {
       cta: 'Learn About Our Sourcing'
     },
     {
-      desktopImage: LuxuryShowroomDesktop, // Replace with actual gem manufacturing desktop image
+      desktopImage: GemManufacturingDesktop, // Replace with actual gem manufacturing desktop image
       mobileImage: LuxuryShowroomMobile, // Replace with actual gem manufacturing mobile image
       title: 'GEM MANUFACTURING EXCELLENCE',
       subtitle: 'PRECISION & ARTISTRY',
