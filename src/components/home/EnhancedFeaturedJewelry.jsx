@@ -11,55 +11,6 @@ const EnhancedFeaturedJewelry = () => {
       
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Images Gallery - Left side on desktop, bottom on mobile */}
-          <div className="lg:order-1 order-2">
-            <div className="grid grid-cols-12 gap-4">
-              {/* First image */}
-              <div className="col-span-7 transform translate-y-8">
-                <div className="overflow-hidden rounded shadow-lg border border-amber-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?q=80&w=600" 
-                    alt="Diamond Necklace" 
-                    className="w-full h-80 object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-              
-              {/* Second image */}
-              <div className="col-span-5">
-                <div className="overflow-hidden rounded shadow-lg border border-amber-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=600" 
-                    alt="Ruby Earrings" 
-                    className="w-full h-52 object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-              
-              {/* Third image */}
-              <div className="col-span-5 transform translate-y-4">
-                <div className="overflow-hidden rounded shadow-lg border border-amber-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=600" 
-                    alt="Sapphire Ring" 
-                    className="w-full h-60 object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-              
-              {/* Fourth image */}
-              <div className="col-span-7">
-                <div className="overflow-hidden rounded shadow-lg border border-amber-100 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600" 
-                    alt="Gold Bracelet" 
-                    className="w-full h-72 object-cover transform transition-transform duration-1000 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          
           {/* Text Content - Right side on desktop, top on mobile */}
           <div className="lg:order-2 order-1">
             <div className="max-w-xl">
@@ -129,6 +80,44 @@ const EnhancedFeaturedJewelry = () => {
                 <span className="relative z-10">Explore Collection</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
               </Link>
+            </div>
+          </div>
+          
+          {/* Images Gallery - Left side on desktop, bottom on mobile - USING ORIGINAL LAYOUT */}
+          <div className="lg:order-1 order-2">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <div className="overflow-hidden rounded-md shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?q=80&w=600" 
+                    alt="Diamond Necklace" 
+                    className="w-full h-80 object-cover transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-md shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?q=80&w=600" 
+                    alt="Sapphire Ring" 
+                    className="w-full h-64 object-cover transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
+              <div className="space-y-6 mt-12">
+                <div className="overflow-hidden rounded-md shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?q=80&w=600" 
+                    alt="Ruby Earrings" 
+                    className="w-full h-64 object-cover transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-md shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600" 
+                    alt="Gold Bracelet" 
+                    className="w-full h-80 object-cover transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
