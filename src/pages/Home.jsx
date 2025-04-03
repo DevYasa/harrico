@@ -1,19 +1,41 @@
-// src/pages/Home.jsx
+// src/pages/LuxuryHome.jsx
 import React from 'react';
-import HeroSection from '../components/home/HeroSection';
-import FeaturedGems from '../components/home/FeaturedGems';
-import FeaturedJewelry from '../components/home/FeaturedJewelry';
-import StoreShowcase from '../components/home/StoreShowcase';
-import Testimonials from '../components/home/Testimonials';
+import EnhancedHeroSection from '../components/home/EnhancedHeroSection';
+import EnhancedFeaturedGems from '../components/home/EnhancedFeaturedGems';
+import EnhancedFeaturedJewelry from '../components/home/EnhancedFeaturedJewelry';
+import EnhancedStoreShowcase from '../components/home/EnhancedStoreShowcase';
+import EnhancedTestimonials from '../components/home/EnhancedTestimonials';
+import LuxurySectionDivider from '../components/common/LuxurySectionDivider';
 
 const Home = () => {
   return (
     <>
-      <HeroSection />
-      <FeaturedGems />
-      <FeaturedJewelry />
-      <StoreShowcase />
-      <Testimonials />
+      {/* Hero Section */}
+      <EnhancedHeroSection />
+      
+      {/* Divider between sections */}
+      <LuxurySectionDivider type="diamond" color="amber" />
+      
+      {/* Featured Gems */}
+      <EnhancedFeaturedGems />
+      
+      {/* Divider between sections */}
+      <LuxurySectionDivider type="wave" color="amber" />
+      
+      {/* Featured Jewelry */}
+      <EnhancedFeaturedJewelry />
+      
+      {/* Divider between sections */}
+      <LuxurySectionDivider type="line-with-gem" color="amber" />
+      
+      {/* Store Showcase */}
+      <EnhancedStoreShowcase />
+      
+      {/* Divider between sections */}
+      <LuxurySectionDivider type="ornate" color="amber" />
+      
+      {/* Testimonials */}
+      <EnhancedTestimonials />
     </>
   );
 };

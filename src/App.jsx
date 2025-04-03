@@ -21,7 +21,7 @@ function App() {
     // Initial loading screen
     const timer = setTimeout(() => {
       setInitialLoading(false);
-    }, 2500);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

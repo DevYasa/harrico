@@ -1,5 +1,7 @@
+// src/components/common/LoadingScreen.jsx
 import React, { useEffect } from 'react';
-import Logo from '../../assets/images/logo1.png';
+import Logo from '../../assets/images/logo.png';
+import SapphireBg from '../../assets/images/bg-load.jpg'; // Update the path to your new sapphire image
 
 const LoadingScreen = () => {
   useEffect(() => {
@@ -22,6 +24,12 @@ const LoadingScreen = () => {
         60% { transform: scale(1.1); opacity: 1; }
         100% { transform: scale(1); opacity: 1; }
       }
+
+      @keyframes glow {
+        0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.5); }
+        100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+      }
     `;
     
     document.head.appendChild(animations);
@@ -35,11 +43,22 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-      <div className="flex flex-col items-center">
-        {/* Logo with rotating border */}
+    <div className="fixed inset-0 flex items-center justify-center z-50 overflow-hidden">
+      {/* Full background sapphire image */}
+      <div className="absolute inset-0">
+        <img 
+          src={SapphireBg}
+          alt="Sapphire Background" 
+          className="w-full h-full object-cover"
+        />
+        {/* Optional dark overlay for better contrast */}
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+      
+      <div className="flex flex-col items-center relative z-10">
+        {/* Logo with rotating border - keeping your existing circle borders */}
         <div className="relative w-40 h-40 md:w-48 md:h-48 mb-8">
-          {/* Simple rotating circle border */}
+          {/* Outer rotating circle border */}
           <div 
             className="absolute inset-0 rounded-full border-4 border-amber-600 border-t-transparent"
             style={{ 
@@ -47,19 +66,27 @@ const LoadingScreen = () => {
             }}
           ></div>
           
+          {/* Inner rotating circle border (opposite direction) */}
+          <div 
+            className="absolute inset-4 rounded-full border-2 border-amber-400 border-b-transparent"
+            style={{ 
+              animation: 'rotate 3s linear infinite reverse'
+            }}
+          ></div>
+          
           {/* Logo container - stays still but scales up on load */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div 
-              className="bg-black rounded-full w-32 h-32 flex items-center justify-center"
+              className="bg-black/80 backdrop-blur-sm rounded-full w-32 h-32 flex items-center justify-center"
               style={{
-                animation: 'scaleUp 1.2s ease-out forwards'
+                animation: 'scaleUp 1.2s ease-out forwards, glow 2s infinite'
               }}
             >
-              {/* Logo with scale up animation */}
+              {/* Logo with scale up animation but NO rotation */}
               <img 
                 src={Logo}
                 alt="Harrico Logo" 
-                className="w-24 h-24 object-contain"
+                className="w-30 h-30 object-contain"
                 style={{
                   animation: 'scaleUp 1.2s ease-out forwards'
                 }}
