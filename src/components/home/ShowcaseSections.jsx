@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SapphireImage from '../../assets/images/home/desktop/bg4.gif'; 
-import SapphireImageMobile from '../../assets/images/home/mobile/mbg14.gif'; // Add your mobile version
+import SapphireImageMobile from '../../assets/images/home/mobile/mbg15.gif'; // Add your mobile version
 import BridalImage from '../../assets/images/home/desktop/bg.gif';
 import BridalImageMobile from '../../assets/images/home/mobile/mbg5.gif';
 import EmeraldImage from '../../assets/images/home/desktop/bg.gif';
