@@ -2,7 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import StoryHeroImage from '../../assets/images/about/bg11.jpeg'; // Add this image
+import StoryHeroImage from '../../assets/hero-bg.gif'; // Add this image
 import StoryImage1 from '../../assets/images/about/story-bg2.gif'; // Add this image
 import StoryImage2 from '../../assets/images/about/story-bg1.gif'; // Add this image
 
@@ -60,18 +60,26 @@ const Story = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${StoryHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Story</h1>
-          <p className="max-w-2xl mx-auto">
-            A journey of passion, dedication, and excellence in Ceylon gemstones
-          </p>
-        </div>
-      </div>
+      <div className="relative h-[50vh] bg-[#08081a]" 
+                 style={{
+                   backgroundImage: `url(${StoryHeroImage})`,
+                   backgroundPosition: 'center',
+                   backgroundSize: 'cover',
+                   backgroundRepeat: 'no-repeat'
+                 }}>
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-30"></div>
+              
+              {/* Content overlay */}
+              <div className="relative h-full z-10 flex items-center justify-center">
+                <div className="container text-white text-center">
+                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Story</h1>
+                  <p className="max-w-2xl mx-auto">
+                    A journey of passion, dedication, and excellence in Ceylon gemstones
+                  </p>
+                </div>
+              </div>
+            </div>
 
       {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-white">
