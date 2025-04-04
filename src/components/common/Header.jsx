@@ -1,8 +1,9 @@
 // src/components/common/Header.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// Import your logo - you'll need to add this file to your assets folder
-import harrico_logo from '../../assets/images/logo3.png'; // Adjust the path as needed
+// Import your logos
+import harrico_logo from '../../assets/images/logo.png'; // Your circular emblem logo
+import harrico_text_logo from '../../assets/images/text-logo.png'; // Add your text logo if available
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,40 +44,52 @@ const Header = () => {
       ]
     },
     {
-      name: 'HIGH JEWELRY',
-      path: '/collections/high-jewelry',
-      submenu: [
-        { name: 'SIGNATURE COLLECTIONS', path: '/collections/high-jewelry/signature' },
-        { name: 'LIMITED EDITIONS', path: '/collections/high-jewelry/limited-editions' },
-        { name: 'BESPOKE CREATIONS', path: '/collections/high-jewelry/bespoke' }
-      ]
-    },
-    {
-      name: 'FINE JEWELRY',
+      name: 'GEMSTONES',
       path: '/collections',
       submenu: [
-        { name: 'NECKLACES', path: '/collections/necklaces' },
+        { name: 'PRECIOUS GEMSTONES', path: '/collections/precious-gemstones' },
+        { name: 'BLUE SAPPHIRE', path: '/collections/precious-gemstones/blue-sapphire' },
+        { name: 'EMERALD', path: '/collections/precious-gemstones/emerald' },
+        { name: 'RUBY', path: '/collections/precious-gemstones/ruby' },
+        { name: 'YELLOW SAPPHIRE', path: '/collections/precious-gemstones/yellow-sapphire' },
+        { name: 'PINK SAPPHIRE', path: '/collections/precious-gemstones/pink-sapphire' },
+        { name: 'OTHER PRECIOUS GEMS', path: '/collections/precious-gemstones' },
+        { name: 'SEMI-PRECIOUS GEMSTONES', path: '/collections/semi-precious-gemstones' }
+      ]
+    },
+    {
+      name: 'JEWELRY',
+      path: '/collections',
+      submenu: [
+        { name: 'GOLD JEWELRY', path: '/collections/gold-jewelry' },
+        { name: '22KT GOLD', path: '/collections/gold-jewelry/22kt' },
+        { name: '18KT GOLD', path: '/collections/gold-jewelry/18kt-yellow' },
+        { name: '14KT GOLD', path: '/collections/gold-jewelry/14kt-yellow' },
+        { name: 'WHITE GOLD', path: '/collections/gold-jewelry/18kt-white' },
+        { name: 'PLATINUM JEWELRY', path: '/collections/platinum-jewelry' },
+        { name: 'SILVER PALLADIUM', path: '/collections/silver-palladium' }
+      ]
+    },
+    {
+      name: 'BY CATEGORY',
+      path: '/collections',
+      submenu: [
         { name: 'RINGS', path: '/collections/rings' },
+        { name: 'NECKLACES', path: '/collections/necklaces' },
         { name: 'EARRINGS', path: '/collections/earrings' },
-        { name: 'BRACELETS', path: '/collections/bracelets' }
+        { name: 'BRACELETS', path: '/collections/bracelets' },
+        { name: 'PENDANTS', path: '/collections/pendants' },
+        { name: 'BRIDAL JEWELRY', path: '/collections/bridal' }
       ]
     },
     {
-      name: 'ENGAGEMENT AND BRIDAL',
-      path: '/collections/bridal',
+      name: 'CUSTOM DESIGNS',
+      path: '/collections/custom-designs',
       submenu: [
-        { name: 'ENGAGEMENT RINGS', path: '/collections/bridal/engagement' },
-        { name: 'WEDDING BANDS', path: '/collections/bridal/wedding-bands' },
-        { name: 'BRIDAL SETS', path: '/collections/bridal/sets' }
-      ]
-    },
-    {
-      name: 'SERVICES',
-      path: '/services',
-      submenu: [
-        { name: 'CUSTOM DESIGN', path: '/services/custom-design' },
-        { name: 'JEWELRY CARE', path: '/services/jewelry-care' },
-        { name: 'REPAIRS & RESIZING', path: '/services/repairs' }
+        { name: 'DESIGN PROCESS', path: '/collections/custom-designs' },
+        { name: 'INSPIRATION GALLERY', path: '/collections/custom-designs/gallery' },
+        { name: 'ENGAGEMENT RINGS', path: '/collections/custom-designs/engagement' },
+        { name: 'SCHEDULE CONSULTATION', path: '/contact/appointment' }
       ]
     },
     {
@@ -104,8 +117,8 @@ const Header = () => {
       <header className="fixed w-full z-50 bg-[#08081a]">
         {/* Desktop View Header - Full Version */}
         <div className="hidden md:block">
-          {/* Top utility icons */}
-          <div className="container mx-auto flex justify-between items-center py-4 px-8">
+          {/* Top utility icons and text logo */}
+          <div className="container mx-auto flex justify-between items-center px-8 pt-4 pb-2">
             <div className="flex items-center space-x-6">
               {/* Left side icons */}
               <Link to="/boutiques" className="text-white">
@@ -121,18 +134,45 @@ const Header = () => {
               </Link>
             </div>
             
-            {/* Center logo */}
-            <Link to="/" className="flex justify-center">
-              <img 
-                src={harrico_logo} 
-                alt="Harrico Logo" 
-                className="w-32 h-32 object-contain"
-              />
-            </Link>
+            {/* Center text logo */}
+            <div className="flex-1 flex justify-center items-center">
+              <Link to="/">
+                {harrico_text_logo ? (
+                  <img 
+                    src={harrico_text_logo} 
+                    alt="Harrico" 
+                    className="h-9"
+                  />
+                ) : (
+                  <h1 className="text-white text-3xl tracking-widest font-serif">HARRICO</h1>
+                )}
+              </Link>
+            </div>
             
             <div className="flex items-center space-x-6">
-              {/* Keep this div for layout balance even if empty */}
+              {/* Keep this div for layout balance */}
+              <div className="w-20"></div>
             </div>
+          </div>
+          
+          {/* Full width line with centered logo */}
+          <div className="relative w-full flex items-center justify-center py-1">
+            {/* Left line */}
+            <div className="h-px bg-[#b9a16b] flex-1 mx-5"></div>
+            
+            {/* Centered emblem logo */}
+            <div className="z-10">
+              <Link to="/">
+                <img 
+                  src={harrico_logo} 
+                  alt="Harrico Emblem" 
+                  className="w-12 h-12 object-contain"
+                />
+              </Link>
+            </div>
+            
+            {/* Right line */}
+            <div className="h-px bg-[#b9a16b] flex-1 mx-5"></div>
           </div>
           
           {/* Main navigation */}
@@ -182,83 +222,104 @@ const Header = () => {
         </div>
         
         {/* Mobile Header */}
-        <div className="md:hidden py-3 px-4 flex justify-between items-center">
-          {/* Mobile Menu Button */}
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-white"
-            aria-label="Toggle menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          
-          {/* Center Logo */}
-          <Link to="/" className="flex items-center justify-center">
-            <img 
-              src={harrico_logo} 
-              alt="Harrico Logo" 
-              className="w-24 h-24 object-contain"
-            />
-          </Link>
-          
-          {/* Right Icons */}
-          <div className="flex items-center space-x-4">
+        <div className="md:hidden py-3 px-4">
+          {/* Top section with menu button, text logo, and search */}
+          <div className="flex justify-between items-center mb-2">
+            {/* Mobile Menu Button that transforms to X when open */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white z-50 w-6 h-6 relative focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              ) : (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </button>
+            
+            {/* Center Text Logo */}
+            <div className="flex-1 flex justify-center">
+              <Link to="/">
+                {harrico_text_logo ? (
+                  <img 
+                    src={harrico_text_logo} 
+                    alt="Harrico" 
+                    className="h-7"
+                  />
+                ) : (
+                  <h1 className="text-white text-xl tracking-wider font-serif">HARRICO</h1>
+                )}
+              </Link>
+            </div>
+            
+            {/* Right Icons */}
             <Link to="/search" className="text-white">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
           </div>
+          
+          {/* Full width line with centered logo - mobile */}
+          <div className="relative w-full flex items-center justify-center">
+            {/* Left line */}
+            <div className="h-px bg-[#b9a16b] flex-1 mx-4"></div>
+            
+            {/* Centered emblem logo */}
+            <div className="z-10">
+              <Link to="/">
+                <img 
+                  src={harrico_logo} 
+                  alt="Harrico Emblem" 
+                  className="w-10 h-10 object-contain"
+                />
+              </Link>
+            </div>
+            
+            {/* Right line */}
+            <div className="h-px bg-[#b9a16b] flex-1 mx-4"></div>
+          </div>
         </div>
       </header>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay - White version with more top spacing */}
       <div 
-        className={`fixed inset-0 bg-[#08081a] z-40 transform transition-transform duration-300 ${
+        className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
-        <div className="container mx-auto px-6 overflow-y-auto h-full pt-20">
-          {/* Close button */}
-          <button 
-            onClick={() => setMobileMenuOpen(false)}
-            className="absolute top-6 right-6 text-white"
-            aria-label="Close menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          
-          {/* No second logo in mobile menu */}
-          <div className="flex justify-center mb-10 text-white text-2xl font-serif">
-            Harrico
-          </div>
-          
-          <nav className="py-8">
-            <ul className="space-y-6">
+        <div className="container mx-auto px-6 overflow-y-auto h-full">
+          {/* Navigation Menu with additional top padding */}
+          <nav className="py-6 mt-24">
+            <ul className="space-y-0">
               {navItems.map((item, index) => {
                 const [subMenuOpen, setSubMenuOpen] = useState(false);
                 return (
-                  <li key={index} className="py-2 border-b border-gray-800">
-                    <div className="flex justify-between items-center">
+                  <li key={index} className="border-b border-gray-200">
+                    <div className="flex justify-between items-center py-4">
                       <Link 
                         to={item.path} 
-                        className="block text-lg tracking-wider text-white font-light"
+                        className="block text-base text-gray-900 font-medium"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.name}
                       </Link>
                       {item.submenu && (
                         <button 
-                          onClick={() => setSubMenuOpen(!subMenuOpen)}
-                          className="text-white p-1"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setSubMenuOpen(!subMenuOpen);
+                          }}
+                          className="text-gray-900 p-1"
                         >
                           <svg 
-                            width="20" 
-                            height="20" 
+                            width="16" 
+                            height="16" 
                             viewBox="0 0 24 24" 
                             fill="none" 
                             xmlns="http://www.w3.org/2000/svg"
@@ -272,12 +333,12 @@ const Header = () => {
                     
                     {/* Mobile Submenu */}
                     {subMenuOpen && item.submenu && (
-                      <div className="mt-2 ml-4 space-y-2">
+                      <div className="py-2 pl-4 mb-3">
                         {item.submenu.map((subItem, subIndex) => (
                           <Link 
                             key={subIndex}
                             to={subItem.path}
-                            className="block py-2 text-sm text-gray-300 hover:text-white"
+                            className="block py-2 text-sm text-gray-600"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {subItem.name}
@@ -294,7 +355,7 @@ const Header = () => {
       </div>
       
       {/* Spacer for fixed header */}
-      <div className="h-[40px] md:h-[180px]"></div>
+      <div className="h-[70px] md:h-[140px]"></div>
     </>
   );
 };
