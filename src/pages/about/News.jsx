@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import NewsHeroImage from '../../assets/images/about/bg11.jpeg'; // Add this image
+import NewsHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import BlueCollection from '../../assets/images/about/news/blue-collection.gif'; // Placeholder for the blue collection image
 import LondonExhibition from '../../assets/images/about/news/london-exhibition.gif'; // Placeholder for the London exhibition image
 import SustainableMining from '../../assets/images/about/news/sustainable-mining.gif'; // Placeholder for the sustainable mining image
@@ -83,18 +83,26 @@ const News = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${NewsHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">News & Events</h1>
-          <p className="max-w-2xl mx-auto">
-            Stay updated with the latest from Harrico
-          </p>
-        </div>
-      </div>
+      <div className="relative h-[50vh] bg-[#08081a]" 
+                 style={{
+                   backgroundImage: `url(${NewsHeroImage})`,
+                   backgroundPosition: 'center',
+                   backgroundSize: 'cover',
+                   backgroundRepeat: 'no-repeat'
+                 }}>
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-30"></div>
+              
+              {/* Content overlay */}
+              <div className="relative h-full z-10 flex items-center justify-center">
+                <div className="container text-white text-center">
+                  <h1 className="text-4xl md:text-5xl font-serif mb-4">News & Events</h1>
+                  <p className="max-w-2xl mx-auto">
+                    Stay updated with the latest from Harrico
+                  </p>
+                </div>
+              </div>
+            </div>
 
       {/* Featured News */}
       {newsArticles.filter(article => article.featured).map((article) => (

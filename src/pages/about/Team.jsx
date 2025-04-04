@@ -2,7 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import TeamHeroImage from '../../assets/images/about/bg11.jpeg'; // Add this image
+import TeamHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import CEOImage from '../../assets/images/about/haris.gif'; // Same as used in About.jsx
 import MustafaAlHassoun from '../../assets/images/about/team/mustafa-al-hassoun.gif'; // Add this image
 import JasanMurugesan from '../../assets/images/about/team/jasan-murugesan.gif'; // Add this image
@@ -128,18 +128,26 @@ const Team = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${TeamHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Team</h1>
-          <p className="max-w-2xl mx-auto">
-            Meet the dedicated professionals who bring the Harrico vision to life
-          </p>
-        </div>
-      </div>
+      <div className="relative h-[50vh] bg-[#08081a]" 
+                 style={{
+                   backgroundImage: `url(${TeamHeroImage})`,
+                   backgroundPosition: 'center',
+                   backgroundSize: 'cover',
+                   backgroundRepeat: 'no-repeat'
+                 }}>
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-30"></div>
+              
+              {/* Content overlay */}
+              <div className="relative h-full z-10 flex items-center justify-center">
+                <div className="container text-white text-center">
+                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Team</h1>
+                  <p className="max-w-2xl mx-auto">
+                    Meet the dedicated professionals who bring the Harrico vision to life
+                  </p>
+                </div>
+              </div>
+            </div>
 
       {/* Team Introduction */}
       <section className="py-16 md:py-24 bg-white">

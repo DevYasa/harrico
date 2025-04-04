@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import SilverPalladiumHeroImage from '../../assets/images/collections/silver-palladium-hero.jpg'; // Add this image
+import SilverPalladiumHeroImage from '../../assets/images/collections/sapphire-jewelry.jpg'; // Add this image
 
 const SilverPalladiumJewelry = () => {
   // Jewelry types

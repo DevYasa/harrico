@@ -2,7 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import LocationsHeroImage from '../../assets/images/about/bg11.jpeg'; // Add this image
+import LocationsHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import KLStoreImage from '../../assets/images/about/kl-showroom.gif'; // Add this image
 import PenangShowroomImage from '../../assets/images/about/penang-showroom.gif'; // Add this image
 import LondonOfficeImage from '../../assets/images/about/london-office.gif'; // Add this image
@@ -48,18 +48,26 @@ const Locations = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${LocationsHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Locations</h1>
-          <p className="max-w-2xl mx-auto">
-            Visit us at our elegant boutiques across the globe
-          </p>
-        </div>
-      </div>
+      <div className="relative h-[50vh] bg-[#08081a]" 
+                 style={{
+                   backgroundImage: `url(${LocationsHeroImage})`,
+                   backgroundPosition: 'center',
+                   backgroundSize: 'cover',
+                   backgroundRepeat: 'no-repeat'
+                 }}>
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black opacity-30"></div>
+              
+              {/* Content overlay */}
+              <div className="relative h-full z-10 flex items-center justify-center">
+                <div className="container text-white text-center">
+                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Locations</h1>
+                  <p className="max-w-2xl mx-auto">
+                    Visit us at our elegant boutiques across the globe
+                  </p>
+                </div>
+              </div>
+            </div>
 
       {/* Introduction */}
       <section className="py-16 md:py-24 bg-white">

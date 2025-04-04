@@ -1,10 +1,31 @@
 // src/pages/about/History.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import HistoryHeroImage from '../../assets/images/about/bg11.jpeg'; // Add this image
+import HarryWinstonStyleTimeline from '../../components/about/HarryWinstonStyleTimeline';
+// Import hero image
+import HistoryHeroImage from '../../assets/images/hero-bg.gif';
 
 const History = () => {
+  // State to track if we're in mobile view
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Timeline events
   const timelineEvents = [
     {
@@ -52,16 +73,24 @@ const History = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${HistoryHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">History & Heritage</h1>
-          <p className="max-w-2xl mx-auto">
-            Over five decades of excellence in the world of gemstones and jewelry
-          </p>
+      <div className="relative h-[50vh] bg-[#08081a]" 
+           style={{
+             backgroundImage: `url(${HistoryHeroImage})`,
+             backgroundPosition: 'center',
+             backgroundSize: 'cover',
+             backgroundRepeat: 'no-repeat'
+           }}>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        
+        {/* Content overlay */}
+        <div className="relative h-full z-10 flex items-center justify-center">
+          <div className="container text-white text-center">
+            <h1 className="text-4xl md:text-5xl font-serif mb-4">History & Heritage</h1>
+            <p className="max-w-2xl mx-auto">
+              Over five decades of excellence in the world of gemstones and jewelry
+            </p>
+          </div>
         </div>
       </div>
 
@@ -107,43 +136,53 @@ const History = () => {
             maxWidth="2xl"
           />
           
-          <div className="relative mt-16">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-[#b9a16b]"></div>
-            
-            {/* Timeline events */}
-            <div className="relative z-10">
-              {timelineEvents.map((event, index) => (
-                <div 
-                  key={index} 
-                  className={`flex items-center mb-16 last:mb-0 ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  }`}
-                >
-                  {/* Content box - alternating sides */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                    <div 
-                      className={`inline-block transition-transform duration-500 hover:scale-105 
-                      ${index % 2 === 0 ? 'origin-right' : 'origin-left'}`}
-                    >
-                      <h3 className="text-2xl font-serif mb-2">{event.title}</h3>
-                      <p className="text-gray-700">{event.description}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Center marker with year */}
-                  <div className="w-2/12 flex justify-center relative">
-                    <div className="w-12 h-12 rounded-full bg-[#08081a] flex items-center justify-center border-4 border-[#b9a16b]">
-                      <span className="text-white text-sm font-bold">{event.year}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Empty space on opposite side */}
-                  <div className="w-5/12"></div>
-                </div>
-              ))}
+          {/* Mobile Timeline (Harry Winston Style) */}
+          {isMobile && (
+            <div className="mt-8">
+              <HarryWinstonStyleTimeline events={timelineEvents} />
             </div>
-          </div>
+          )}
+          
+          {/* Desktop Timeline */}
+          {!isMobile && (
+            <div className="relative mt-16">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-[#b9a16b]"></div>
+              
+              {/* Timeline events */}
+              <div className="relative z-10">
+                {timelineEvents.map((event, index) => (
+                  <div 
+                    key={index} 
+                    className={`flex items-center mb-16 last:mb-0 ${
+                      index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                    }`}
+                  >
+                    {/* Content box - alternating sides */}
+                    <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                      <div 
+                        className={`inline-block transition-transform duration-500 hover:scale-105 
+                        ${index % 2 === 0 ? 'origin-right' : 'origin-left'}`}
+                      >
+                        <h3 className="text-2xl font-serif mb-2">{event.title}</h3>
+                        <p className="text-gray-700">{event.description}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Center marker with year */}
+                    <div className="w-2/12 flex justify-center relative">
+                      <div className="w-12 h-12 rounded-full bg-[#08081a] flex items-center justify-center border-4 border-[#b9a16b]">
+                        <span className="text-white text-sm font-bold">{event.year}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Empty space on opposite side */}
+                    <div className="w-5/12"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

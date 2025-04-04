@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import SemiPreciousGemsHeroImage from '../../assets/images/collections/semi-precious-gems-hero.jpg'; // Add this image
+import SemiPreciousGemsHeroImage from '../../assets/images/collections/sapphire-jewelry.jpg'; // Add this image
 
 const SemiPreciousGemstones = () => {
   // Semi-precious gemstones data

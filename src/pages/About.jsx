@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/common/SectionTitle';
 import GoldDivider from '../components/common/GoldDivider';
-import AboutHeroImage from '../assets/images/about/bg11.jpeg'; // Add this image to your assets
 
-// Import CEO image - use the one from your business profile
+// Import images
+import HeroImage from '../assets/images/hero-bg.gif';
 import CEOImage from '../assets/images/about/haris.gif'; 
 
 const About = () => {
@@ -43,17 +43,28 @@ const About = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section with Background Image */}
-      <div 
-        className="relative h-[50vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${AboutHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">About Harrico</h1>
-          <p className="max-w-2xl mx-auto">
-            A legacy of excellence in Ceylon gemstones and fine jewelry since 1970
-          </p>
+      {/* Hero Section with direct image */}
+      <div className="relative h-[50vh] bg-[#08081a]">
+        {/* Image as separate element instead of background */}
+        <img 
+          src={HeroImage} 
+          alt="Harrico hero"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          onError={(e) => {
+            console.error('Failed to load hero image');
+            // Keep the background color as fallback
+            e.target.style.display = 'none';
+          }}
+        />
+        
+        {/* Content overlay */}
+        <div className="relative h-full z-10 flex items-center justify-center">
+          <div className="container text-white text-center">
+            <h1 className="text-4xl md:text-5xl font-serif mb-4">About Harrico</h1>
+            <p className="max-w-2xl mx-auto">
+              A legacy of excellence in Ceylon gemstones and fine jewelry since 1970
+            </p>
+          </div>
         </div>
       </div>
 
@@ -67,6 +78,12 @@ const About = () => {
                   src={CEOImage} 
                   alt="Haris Yusuf - CEO & Managing Director" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null; 
+                    // Fallback to a solid background if image fails
+                    e.target.parentNode.style.backgroundColor = '#08081a';
+                    e.target.style.display = 'none';
+                  }}
                 />
               </div>
             </div>

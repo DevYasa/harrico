@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/common/SectionTitle';
 import GoldDivider from '../components/common/GoldDivider';
-import CollectionsHeroImage from '../assets/images/collections/collections-hero.jpg'; // Add this image
+import CollectionsHeroImage from '../assets/images/collections/sapphire-jewelry.jpg'; // Add this image
 
 const Collections = () => {
   // Main collection categories
