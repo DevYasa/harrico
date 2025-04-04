@@ -6,7 +6,7 @@ import LuxurySectionDivider from '../components/common/GoldDivider';
 
 // Import images
 import CEOImage from '../assets/images/haris.jpg';
-import ShopImage from '../assets/images/shop.png';
+import ShopImage from '../assets/images/bg11.jpeg';
 import GemCuttingImg from '../assets/images/services/gem-cutting.jpg';
 import JewelryDesignImg from '../assets/images/services/jewelry-design.jpg';
 import GoldMiningImg from '../assets/images/services/gold-mining.jpeg';
