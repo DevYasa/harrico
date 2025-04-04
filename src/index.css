@@ -1,69 +1,94 @@
 /* src/index.css */
-/* Import luxury fonts first */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+/* Import Harry Winston style fonts - Updated font selection for better readability */
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Inter:wght@300;400;500;600&display=swap');
 
-/* Then import Tailwind - using the correct method for the Vite plugin approach */
+/* Import Tailwind */
 @import "tailwindcss";
 
-/* Custom base styles */
+/* Harry Winston Color Palette */
+:root {
+  --hw-navy: #08081a;       /* Primary dark blue, almost black */
+  --hw-gold: #b9a16b;       /* Accent gold color */
+  --hw-light-gold: #e5d9b6; /* Lighter gold accent */
+  --hw-white: #ffffff;      /* White */
+  --hw-off-white: #f8f8f5;  /* Slightly off-white background */
+  --hw-light-gray: #e0e0e0; /* Light gray for borders */
+  --hw-gray: #8a8a8a;       /* Medium gray for secondary text */
+  --hw-dark-gray: #4a4a4a;  /* Dark gray for primary text */
+  
+  /* Font size variables - increased for better readability */
+  --font-size-base: 16px;      /* Base font size - increased from default */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-md: 1rem;        /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+}
+
+/* Custom base styles - Updated with better font choices */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
-  color: #333;
+  font-family: 'Inter', 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: var(--font-size-md);
+  background-color: var(--hw-white);
+  color: var(--hw-dark-gray);
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel', serif;
+  font-family: 'Prata', 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
 }
 
-/* Luxury utility classes */
-.font-heading {
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+/* Font utility classes - Updated with new fonts */
+.font-serif {
+  font-family: 'Prata', 'Playfair Display', serif;
 }
 
-.font-subheading {
+.font-alt-serif {
   font-family: 'Cormorant Garamond', serif;
 }
 
+.font-sans {
+  font-family: 'Inter', 'Lato', sans-serif;
+}
+
 .font-display {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 /* Enhanced animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
+  from { opacity: 0; transform: translateX(-20px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translateX(30px); }
+  from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes shimmer {
-  0% { background-position: -100% 0; }
-  100% { background-position: 100% 0; }
-}
-
-@keyframes borderPulse {
-  0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
-}
-
-/* Animation classes */
+/* Animation utility classes */
 .animate-fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
@@ -78,21 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-scale-in {
   animation: scaleIn 0.8s ease forwards;
-}
-
-.shimmer-effect {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.border-pulse {
-  animation: borderPulse 2s infinite;
 }
 
 /* Animation delays */
@@ -112,120 +122,330 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 600ms;
 }
 
-/* Luxury button styles */
-.btn-luxury {
-  padding: 0.75rem 2rem;
-  transition: all 0.3s;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
+/* Container customization for Harry Winston-style spacing */
+.container {
+  max-width: 1400px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Loading screen animations */
+@keyframes blueGlow {
+  0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+  50% { box-shadow: 0 0 35px rgba(59, 130, 246, 0.8), 0 0 50px rgba(59, 130, 246, 0.4); }
+  100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+}
+
+@keyframes singleScaleUp {
+  0% { transform: scale(0.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Harry Winston Button Styles */
+.btn-hw {
+  display: inline-block;
+  border: 1px solid var(--hw-gold);
+  background-color: transparent;
+  color: var(--hw-gold);
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px;
-  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem; /* Slightly increased for readability */
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-hw:hover {
+  background-color: var(--hw-gold);
+  color: var(--hw-white);
+}
+
+.btn-hw-light {
+  border-color: var(--hw-white);
+  color: var(--hw-white);
+}
+
+.btn-hw-light:hover {
+  background-color: var(--hw-white);
+  color: var(--hw-navy);
+}
+
+.btn-hw-dark {
+  border-color: var(--hw-navy);
+  color: var(--hw-navy);
+}
+
+.btn-hw-dark:hover {
+  background-color: var(--hw-navy);
+  color: var(--hw-white);
+}
+
+/* Enhanced image effects */
+.img-hover-zoom {
   overflow: hidden;
 }
 
-.btn-luxury-primary {
-  background-color: #92400e;
-  color: white;
-  border: 1px solid #92400e;
+.img-hover-zoom img {
+  transition: transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.btn-luxury-primary:hover {
-  background-color: #7c3509;
+.img-hover-zoom:hover img {
+  transform: scale(1.05);
 }
 
-.btn-luxury-outline {
-  background-color: transparent;
-  color: #92400e;
-  border: 2px solid #92400e;
+/* Harry Winston custom dividers */
+.hw-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--hw-gold);
+  margin: 1.5rem 0;
 }
 
-.btn-luxury-outline:hover {
-  background-color: #92400e;
-  color: white;
+.hw-divider-center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Luxury section styling */
-.section-luxury {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
-.section-luxury-sm {
+/* Harry Winston section spacing */
+.hw-section {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
-/* Enhanced image effects */
-.img-zoom-container {
-  overflow: hidden;
-  position: relative;
+.hw-section-lg {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
-.img-zoom {
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h3 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .tracking-widest {
+    letter-spacing: 0.1em;
+  }
+  
+  .hw-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .hw-section-lg {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Mobile menu adjustments */
+  .mobile-menu-container {
+    padding-top: 5rem;
+  }
 }
 
-.img-zoom:hover {
-  transform: scale(1.1);
-}
-
-/* Gold gradient text */
-.gold-gradient-text {
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
-
-/* Luxury dividers */
-.luxury-divider {
-  position: relative;
-  height: 1px;
-  background-color: #d1b000;
-}
-
-.luxury-divider::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 5px;
-  background-color: #d1b000;
-  border-radius: 50%;
-}
-
-/* Gold overlay effect */
-.gold-overlay {
-  position: relative;
-}
-
-.gold-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, rgba(217, 119, 6, 0.05), rgba(245, 158, 11, 0.1));
-  pointer-events: none;
-}
-
-/* Custom scrollbar for luxury feel */
+/* Custom scrollbar for refined feel */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--hw-off-white);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #d1a300, #92400e);
-  border-radius: 6px;
-  border: 3px solid #f1f1f1;
+  background: var(--hw-dark-gray);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #b38728, #7c3509);
+  background: var(--hw-navy);
+}
+
+/* Harry Winston text utility classes */
+.hw-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.hw-caption {
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.1em;
+  color: var(--hw-gray);
+}
+
+/* Harry Winston card and overlay styles */
+.hw-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hw-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 8, 26, 0.7), rgba(8, 8, 26, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hw-card:hover .hw-card-overlay {
+  opacity: 1;
+}
+
+/* Harry Winston hero section styling */
+.hw-hero {
+  position: relative;
+  height: 100vh;
+  color: var(--hw-white);
+  overflow: hidden;
+}
+
+.hw-hero-content {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hw-hero-title {
+  font-family: 'Prata', 'Playfair Display', serif;
+  font-size: var(--font-size-4xl);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .hw-hero-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Fix for header spacing - Updated for new Harry Winston header */
+.header-spacer {
+  height: 6.5rem;
+}
+
+@media (min-width: 768px) {
+  .header-spacer {
+    height: 8rem;
+  }
+}
+
+/* Better input styling */
+.hw-input {
+  border: 1px solid var(--hw-light-gray);
+  padding: 0.75rem 1rem;
+  font-family: 'Inter', 'Lato', sans-serif;
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+}
+
+.hw-input:focus {
+  outline: none;
+  border-color: var(--hw-gold);
+  box-shadow: 0 0 0 1px var(--hw-gold);
+}
+
+/* Harry Winston table styling */
+.hw-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hw-table th {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--hw-light-gray);
+}
+
+.hw-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--hw-light-gray);
+  font-size: var(--font-size-md);
+}
+
+/* Harry Winston form styling */
+.hw-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.hw-form-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: var(--font-size-sm);
+  margin-bottom: 0.5rem;
+}
+
+/* Improved transitions */
+.transition-hw {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Harry Winston nav styling */
+.hw-nav-text {
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Harry Winston paragraph styling for better readability */
+p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Harry Winston heading sizes */
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-md);
 }

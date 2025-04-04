@@ -2,8 +2,8 @@
 import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import LuxurySectionTitle from '../components/common/LuxurySectionTitle';
-import LuxurySectionDivider from '../components/common/LuxurySectionDivider';
+import LuxurySectionTitle from '../components/common/SectionTitle';
+import LuxurySectionDivider from '../components/common/GoldDivider';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

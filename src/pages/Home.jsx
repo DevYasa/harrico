@@ -1,41 +1,20 @@
-// src/pages/LuxuryHome.jsx
+// src/pages/Home.jsx
 import React from 'react';
-import EnhancedHeroSection from '../components/home/EnhancedHeroSection';
-import EnhancedFeaturedGems from '../components/home/EnhancedFeaturedGems';
-import EnhancedFeaturedJewelry from '../components/home/EnhancedFeaturedJewelry';
-import EnhancedStoreShowcase from '../components/home/EnhancedStoreShowcase';
-import EnhancedTestimonials from '../components/home/EnhancedTestimonials';
-import LuxurySectionDivider from '../components/common/LuxurySectionDivider';
+import ShowcaseSections from '../components/home/ShowcaseSections';
+import BridalSection from '../components/home/BridalSection';
+import SalonSection from '../components/home/SalonSection';
 
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
-      <EnhancedHeroSection />
+      {/* Main showcase sections */}
+      <ShowcaseSections />
       
-      {/* Divider between sections */}
-      <LuxurySectionDivider type="diamond" color="amber" />
+      {/* Bridal Section */}
+      <BridalSection />
       
-      {/* Featured Gems */}
-      <EnhancedFeaturedGems />
-      
-      {/* Divider between sections */}
-      <LuxurySectionDivider type="wave" color="amber" />
-      
-      {/* Featured Jewelry */}
-      <EnhancedFeaturedJewelry />
-      
-      {/* Divider between sections */}
-      <LuxurySectionDivider type="line-with-gem" color="amber" />
-      
-      {/* Store Showcase */}
-      <EnhancedStoreShowcase />
-      
-      {/* Divider between sections */}
-      <LuxurySectionDivider type="ornate" color="amber" />
-      
-      {/* Testimonials */}
-      <EnhancedTestimonials />
+      {/* Find a Salon Section */}
+      <SalonSection />
     </>
   );
 };

@@ -1,8 +1,8 @@
 // src/pages/EnhancedCollections.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LuxurySectionTitle from '../components/common/LuxurySectionTitle';
-import LuxurySectionDivider from '../components/common/LuxurySectionDivider';
+import LuxurySectionTitle from '../components/common/SectionTitle';
+import LuxurySectionDivider from '../components/common/GoldDivider';
 
 // Import sample images (you'll need to replace these with your actual gem images)
 import BlueSapphireImg from '../assets/images/gems/sapphire/royal-blue-sapphire.jpg';

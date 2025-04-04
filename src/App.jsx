@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import LoadingScreen from './components/common/LoadingScreen';
-import CollectionDetail from './pages/CollectionDetail';
 
 // Lazy-loaded components
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Collections = lazy(() => import('./pages/Collections'));
+const CollectionDetail = lazy(() => import('./pages/CollectionDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
 const CeylonGemsHub = lazy(() => import('./pages/CeylonGemsHub'));
 const GIM = lazy(() => import('./pages/GIM'));
@@ -26,6 +26,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // While initially loading, show only the loading screen
   if (initialLoading) {
     return <LoadingScreen />;
   }
@@ -34,7 +35,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow pt-16">
+        <main className="flex-grow">
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
               <Route path="/" element={<Home />} />

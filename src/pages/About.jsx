@@ -1,8 +1,8 @@
 // src/pages/EnhancedAbout.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LuxurySectionTitle from '../components/common/LuxurySectionTitle';
-import LuxurySectionDivider from '../components/common/LuxurySectionDivider';
+import LuxurySectionTitle from '../components/common/SectionTitle';
+import LuxurySectionDivider from '../components/common/GoldDivider';
 
 // Import images
 import CEOImage from '../assets/images/haris.jpg';

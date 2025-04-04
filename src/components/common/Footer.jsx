@@ -1,155 +1,141 @@
-// src/components/common/LuxuryFooter.jsx
+// src/components/common/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImage from '../../assets/images/logo1.png';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-950 text-white overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute -top-24 -left-24 w-48 h-48 rounded-full bg-amber-600/5 blur-3xl"></div>
-      <div className="absolute -bottom-24 -right-24 w-48 h-48 rounded-full bg-amber-600/5 blur-3xl"></div>
-      
-      {/* Gold accent at top */}
-      <div className="h-1 w-full bg-gradient-to-r from-amber-300 via-amber-600 to-amber-300"></div>
-      
-      {/* Upper Footer */}
-      <div className="container mx-auto px-4">
-        <div className="pt-20 pb-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12">
-          {/* Brand Information */}
-          <div className="lg:col-span-1 animate-fade-in">
-            <Link to="/" className="block mb-8 group">
-              <img src={logoImage} alt="Harrico Ceylon Gems & Jewels" className="h-16 transition-transform duration-500 group-hover:scale-105" />
-            </Link>
-            <p className="text-gray-400 mb-8 font-light leading-relaxed">
-              Exquisite Ceylon gems and fine jewelry, handcrafted with passion and precision. Our creations embody timeless elegance and exceptional craftsmanship.
-            </p>
-            <div className="flex space-x-5">
-              {/* Social icons with hover animations */}
-              {[
-                { icon: 'facebook', url: 'https://facebook.com' },
-                { icon: 'instagram', url: 'https://instagram.com' },
-                { icon: 'pinterest', url: 'https://pinterest.com' }
-              ].map((social) => (
-                <a 
-                  key={social.icon} 
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-full border border-amber-700/30 flex items-center justify-center text-amber-300 hover:text-gray-900 hover:bg-amber-400 transition-all duration-300 group overflow-hidden relative"
-                  aria-label={`Follow us on ${social.icon}`}
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                  <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    {social.icon === 'facebook' && (
-                      <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                    )}
-                    {social.icon === 'instagram' && (
-                      <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                    )}
-                    {social.icon === 'pinterest' && (
-                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
-                    )}
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-          
-          {/* Quick Links */}
-          <div className="animate-fade-in delay-150">
-            <h3 className="text-lg font-heading mb-6 text-amber-300">Quick Links</h3>
-            <div className="w-16 h-px bg-amber-700/50 mb-6"></div>
+    <footer className="bg-[#08081a] text-white">
+      <div className="container mx-auto px-4 py-10 md:py-16">
+        {/* Main Footer Sections */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+          {/* SERVICES */}
+          <div>
+            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-4">
-              {[
-                { path: '/', label: 'Home' },
-                { path: '/about', label: 'About Us' },
-                { path: '/collections', label: 'Collections' },
-                { path: '/ceylon-gems-hub', label: 'Ceylon Gems Hub' },
-                { path: '/gim', label: 'GIM' },
-                { path: '/contact', label: 'Contact' }
-              ].map((item) => (
-                <li key={item.path}>
-                  <Link 
-                    to={item.path} 
-                    className="text-gray-400 hover:text-amber-300 transition-colors duration-300 flex items-center group"
-                  >
-                    <span className="w-0 h-px bg-amber-500 transition-all duration-300 mr-0 group-hover:w-3 group-hover:mr-2"></span>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link to="/appointment" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Schedule an Appointment
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Request Assistance
+                </Link>
+              </li>
+              <li>
+                <Link to="/newsletter" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Subscribe to Newsletters
+                </Link>
+              </li>
+              <li>
+                <Link to="/collections" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Explore our Catalogs
+                </Link>
+              </li>
             </ul>
           </div>
-          
-          {/* Contact Info */}
-          <div className="animate-fade-in delay-300">
-            <h3 className="text-lg font-heading mb-6 text-amber-300">Contact Us</h3>
-            <div className="w-16 h-px bg-amber-700/50 mb-6"></div>
-            <address className="not-italic text-gray-400 space-y-4">
-              <div className="flex items-start group">
-                <svg className="w-5 h-5 text-amber-500 mr-3 mt-1 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                  NO.2-03B 2nd floor, Intermark Mall,<br />
-                  348, Jln Tun Razak, Kampung Datuk Keramat,<br />
-                  50400 Kuala Lumpur, Federal Territory of Kuala Lumpur
-                </span>
-              </div>
-              <div className="flex items-center group">
-                <svg className="w-5 h-5 text-amber-500 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="group-hover:text-gray-300 transition-colors duration-300">+60 3 2181 8000</span>
-              </div>
-              <div className="flex items-center group">
-                <svg className="w-5 h-5 text-amber-500 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="group-hover:text-gray-300 transition-colors duration-300">harricoceylongems@gmail.com</span>
-              </div>
-            </address>
+
+          {/* CORPORATE */}
+          <div>
+            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Corporate</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/careers" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/about/philanthropy" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Philanthropy
+                </Link>
+              </li>
+              <li>
+                <Link to="/ceylon-gems-hub" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Ceylon Gems Hub
+                </Link>
+              </li>
+              <li>
+                <Link to="/gim" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Gemological Institute
+                </Link>
+              </li>
+            </ul>
           </div>
-          
-          {/* Newsletter */}
-          <div className="lg:col-span-1 animate-fade-in delay-450">
-            <h3 className="text-lg font-heading mb-6 text-amber-300">Newsletter</h3>
-            <div className="w-16 h-px bg-amber-700/50 mb-6"></div>
-            <p className="text-gray-400 mb-6 font-light">Subscribe to receive updates on new collections and exclusive events.</p>
-            <form className="flex flex-col space-y-4">
-              <div className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="bg-gray-900 text-white px-4 py-3 w-full outline-none focus:ring-2 focus:ring-amber-400 border border-gray-800 transition-all duration-300 placeholder:text-gray-600"
-                />
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 transform scale-x-0 transition-transform duration-300 origin-left group-focus-within:scale-x-100"></div>
-              </div>
-              <button 
-                type="submit" 
-                className="bg-amber-600 hover:bg-amber-500 text-white px-4 py-3 transition-colors duration-500 uppercase tracking-widest text-sm relative overflow-hidden group"
-              >
-                <span className="relative z-10">Subscribe</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-400 transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
-              </button>
-            </form>
+
+          {/* LEGAL TERMS */}
+          <div>
+            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Legal Terms</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link to="/terms" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Terms of Use
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/cookie" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Cookie Notice
+                </Link>
+              </li>
+              <li>
+                <Link to="/supply-chain" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Supply Chain
+                </Link>
+              </li>
+              <li>
+                <Link to="/accessibility" className="text-xs text-gray-400 hover:text-white transition-colors">
+                  Accessibility
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
-        
-        {/* Bottom Footer */}
-        <div className="py-8 border-t border-gray-800/50 text-gray-500 text-sm">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>© {new Date().getFullYear()} Harrico Ceylon Gems & Jewels. All rights reserved.</p>
-            <div className="mt-4 md:mt-0">
-              <ul className="flex space-x-6">
-                <li><a href="#" className="hover:text-amber-300 transition-colors duration-300">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-amber-300 transition-colors duration-300">Terms of Service</a></li>
-              </ul>
+
+          {/* FOLLOW US */}
+          <div>
+            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Follow Us</h3>
+            <div className="flex space-x-4">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                </svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.029 10.029 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                </svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="Pinterest">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345c-.091.378-.293 1.198-.334 1.363-.053.225-.172.271-.401.165-1.499-.69-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z" />
+                </svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" aria-label="YouTube">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
+
+        {/* Copyright Section */}
+        <div className="mt-4 border-t border-gray-700 pt-6">
+              <p className="text-xs text-gray-400">© 2025 Harrico Ceylon Gems & Jewels. All rights reserved. {new Date().getFullYear()}</p>
+          </div>
       </div>
     </footer>
   );
