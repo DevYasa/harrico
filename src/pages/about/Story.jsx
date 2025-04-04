@@ -2,7 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import StoryHeroImage from '../../assets/hero-bg.gif'; // Add this image
+import StoryHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import StoryImage1 from '../../assets/images/about/story-bg2.gif'; // Add this image
 import StoryImage2 from '../../assets/images/about/story-bg1.gif'; // Add this image
 
