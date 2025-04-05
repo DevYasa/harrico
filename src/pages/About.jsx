@@ -31,13 +31,6 @@ const About = () => {
       description: 'Meet the dedicated professionals and artisans who bring our vision to life through exceptional craftsmanship and innovation.',
       link: '/about/team',
       linkText: 'MEET OUR TEAM'
-    },
-    {
-      id: 'locations',
-      title: 'Our Locations',
-      description: 'Visit us at our flagship store in Kuala Lumpur, our Penang showroom, or our London office, where our experts await to assist you.',
-      link: '/about/locations',
-      linkText: 'FIND OUR LOCATIONS'
     }
   ];
 
@@ -49,7 +42,7 @@ const About = () => {
         <img 
           src={HeroImage} 
           alt="Harrico hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
           onError={(e) => {
             console.error('Failed to load hero image');
             // Keep the background color as fallback

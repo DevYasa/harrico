@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
           {/* SERVICES */}
           <div>
-            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Services</h3>
+            <h3 className="text-sm font-medium mb-6 uppercase tracking-wider">Contact Us</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/appointment" className="text-xs text-gray-400 hover:text-white transition-colors">
+                <Link to="/contact/appointment" className="text-xs text-gray-400 hover:text-white transition-colors">
                   Schedule an Appointment
                 </Link>
               </li>
@@ -27,11 +27,6 @@ const Footer = () => {
                   Subscribe to Newsletters
                 </Link>
               </li>
-              <li>
-                <Link to="/collections" className="text-xs text-gray-400 hover:text-white transition-colors">
-                  Explore our Catalogs
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -42,11 +37,6 @@ const Footer = () => {
               <li>
                 <Link to="/careers" className="text-xs text-gray-400 hover:text-white transition-colors">
                   Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="/about/philanthropy" className="text-xs text-gray-400 hover:text-white transition-colors">
-                  Philanthropy
                 </Link>
               </li>
               <li>
@@ -74,21 +64,6 @@ const Footer = () => {
               <li>
                 <Link to="/privacy" className="text-xs text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/cookie" className="text-xs text-gray-400 hover:text-white transition-colors">
-                  Cookie Notice
-                </Link>
-              </li>
-              <li>
-                <Link to="/supply-chain" className="text-xs text-gray-400 hover:text-white transition-colors">
-                  Supply Chain
-                </Link>
-              </li>
-              <li>
-                <Link to="/accessibility" className="text-xs text-gray-400 hover:text-white transition-colors">
-                  Accessibility
                 </Link>
               </li>
             </ul>
@@ -134,8 +109,8 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <div className="mt-4 border-t border-gray-700 pt-6">
-              <p className="text-xs text-gray-400">© 2025 Harrico Ceylon Gems & Jewels. All rights reserved. {new Date().getFullYear()}</p>
-          </div>
+          <p className="text-xs text-center text-white"> © {new Date().getFullYear()} Harrico Ceylon Gems & Jewels. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

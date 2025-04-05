@@ -39,7 +39,6 @@ const Header = () => {
         { name: 'HISTORY & HERITAGE', path: '/about/history' },
         { name: 'OUR STORY', path: '/about/story' },
         { name: 'OUR TEAM', path: '/about/team' },
-        { name: 'LOCATIONS', path: '/about/locations' },
         { name: 'NEWS & EVENTS', path: '/about/news' }
       ]
     },
@@ -97,8 +96,7 @@ const Header = () => {
       path: '/contact',
       submenu: [
         { name: 'BOUTIQUES', path: '/contact/boutiques' },
-        { name: 'APPOINTMENT', path: '/contact/appointment' },
-        { name: 'CUSTOMER SERVICE', path: '/contact/customer-service' }
+        { name: 'APPOINTMENT', path: '/contact/appointment' }
       ]
     }
   ];
@@ -120,16 +118,11 @@ const Header = () => {
           {/* Top utility icons and text logo */}
           <div className="container mx-auto flex justify-between items-center px-8 pt-4 pb-2">
             <div className="flex items-center space-x-6">
-              {/* Left side icons */}
-              <Link to="/boutiques" className="text-white">
+              {/* Payment icon instead of search */}
+              <Link to="/payment" className="text-white">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 22C16 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 14.4183 8 18 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </Link>
-              <Link to="/search" className="text-white">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M21 4H3C1.89 4 1 4.89 1 6V18C1 19.11 1.89 20 3 20H21C22.11 20 23 19.11 23 18V6C23 4.89 22.11 4 21 4ZM21 18H3V12H21V18ZM21 8H3V6H21V8Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M16 15.5C16.8284 15.5 17.5 14.8284 17.5 14C17.5 13.1716 16.8284 12.5 16 12.5C15.1716 12.5 14.5 13.1716 14.5 14C14.5 14.8284 15.1716 15.5 16 15.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
             </div>
@@ -223,7 +216,7 @@ const Header = () => {
         
         {/* Mobile Header */}
         <div className="md:hidden py-3 px-4">
-          {/* Top section with menu button, text logo, and search */}
+          {/* Top section with menu button, text logo, and payment icon */}
           <div className="flex justify-between items-center mb-2">
             {/* Mobile Menu Button that transforms to X when open */}
             <button 
@@ -257,10 +250,11 @@ const Header = () => {
               </Link>
             </div>
             
-            {/* Right Icons */}
-            <Link to="/search" className="text-white">
+            {/* Payment Icon */}
+            <Link to="/payment" className="text-white">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21 4H3C1.89 4 1 4.89 1 6V18C1 19.11 1.89 20 3 20H21C22.11 20 23 19.11 23 18V6C23 4.89 22.11 4 21 4ZM21 18H3V12H21V18ZM21 8H3V6H21V8Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M16 15.5C16.8284 15.5 17.5 14.8284 17.5 14C17.5 13.1716 16.8284 12.5 16 12.5C15.1716 12.5 14.5 13.1716 14.5 14C14.5 14.8284 15.1716 15.5 16 15.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
           </div>
@@ -349,6 +343,18 @@ const Header = () => {
                   </li>
                 );
               })}
+              {/* Add Payment link for mobile menu */}
+              <li className="border-b border-gray-200">
+                <div className="flex justify-between items-center py-4">
+                  <Link 
+                    to="/payment" 
+                    className="block text-base text-gray-900 font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    PAYMENT
+                  </Link>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>

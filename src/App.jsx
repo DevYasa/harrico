@@ -15,7 +15,6 @@ const About = lazy(() => import('./pages/About'));
 const History = lazy(() => import('./pages/about/History'));
 const Story = lazy(() => import('./pages/about/Story'));
 const Team = lazy(() => import('./pages/about/Team'));
-const Locations = lazy(() => import('./pages/about/Locations'));
 const News = lazy(() => import('./pages/about/News'));
 
 // Collections main page
@@ -31,8 +30,13 @@ const PlatinumJewelry = lazy(() => import('./pages/collections/PlatinumJewelry')
 const SilverPalladiumJewelry = lazy(() => import('./pages/collections/SilverPalladiumJewelry'));
 const CustomDesigns = lazy(() => import('./pages/collections/CustomDesigns'));
 
-// Other pages
+// Contact Section
 const Contact = lazy(() => import('./pages/Contact'));
+const Boutiques = lazy(() => import('./pages/contact/Boutiques'));
+const Appointment = lazy(() => import('./pages/contact/Appointment'));
+
+// Payment Page
+const Payment = lazy(() => import('./pages/Payment'));
 
 function App() {
   const [initialLoading, setInitialLoading] = useState(true);
@@ -66,7 +70,6 @@ function App() {
               <Route path="/about/history" element={<History />} />
               <Route path="/about/story" element={<Story />} />
               <Route path="/about/team" element={<Team />} />
-              <Route path="/about/locations" element={<Locations />} />
               <Route path="/about/news" element={<News />} />
               
               {/* Collections main page */}
@@ -82,9 +85,14 @@ function App() {
               <Route path="/collections/silver-palladium" element={<SilverPalladiumJewelry />} />
               <Route path="/collections/custom-designs" element={<CustomDesigns />} />
               
-              {/* Contact route */}
+              {/* Contact routes */}
               <Route path="/contact" element={<Contact />} />
+              <Route path="/contact/boutiques" element={<Boutiques />} />
+              <Route path="/contact/appointment" element={<Appointment />} />
               <Route path="/contact/:section" element={<Contact />} />
+              
+              {/* Payment route */}
+              <Route path="/payment" element={<Payment />} />
               
             </Routes>
           </Suspense>

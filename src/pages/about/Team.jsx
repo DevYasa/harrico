@@ -135,8 +135,6 @@ const Team = () => {
                    backgroundSize: 'cover',
                    backgroundRepeat: 'no-repeat'
                  }}>
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black opacity-30"></div>
               
               {/* Content overlay */}
               <div className="relative h-full z-10 flex items-center justify-center">

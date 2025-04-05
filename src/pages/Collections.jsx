@@ -3,7 +3,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/common/SectionTitle';
 import GoldDivider from '../components/common/GoldDivider';
-import CollectionsHeroImage from '../assets/images/collections/sapphire-jewelry.jpg'; // Add this image
+import CollectionsHeroImage from '..//assets/images/hero-bg.gif'; // Add this image
+// import PreciousGemstonesImage from '..//assets/images/collections/precious-gemstones.gif';
+// import SemiPreciousGemstonesImage from '..//assets/images/collections/semi-precious-gemstones.gif';
+// import GoldJewelryImage from '..//assets/images/collections/gold-jewelry.gif';
+// import PlatinumJewelryImage from '..//assets/images/collections/platinum-jewelry.gif';
+// import SilverPalladiumImage from '..//assets/images/collections/silver-palladium.gif';
+// import CustomDesignsImage from '..//assets/images/collections/custom-designs.gif';
+import CeylonBlueImage from '..//assets/images/collections/featured/ceylon-blue.gif';
+import EmeraldEleganceImage from '..//assets/images/collections/featured/emerald-elegance.gif';
+import RubyRomanceImage from '..//assets/images/collections/featured/ruby-romance.gif';
+// import GoldDividerImage from '..//assets/images/collections/gold-divider.gif'; // Add this image
+
 
 const Collections = () => {
   // Main collection categories
@@ -58,21 +69,21 @@ const Collections = () => {
       id: 'ceylon-blue',
       title: 'Ceylon Blue Sapphires',
       description: 'Our signature collection featuring the finest blue sapphires from Sri Lanka.',
-      image: '/assets/images/collections/featured/ceylon-blue.jpg', // Add this image
+      image: CeylonBlueImage,
       link: '/collections/precious-gemstones/blue-sapphire'
     },
     {
       id: 'emerald-elegance',
       title: 'Emerald Elegance',
       description: 'Striking green emeralds set in sophisticated designs that showcase their vibrant color.',
-      image: '/assets/images/collections/featured/emerald-elegance.jpg', // Add this image
+      image: EmeraldEleganceImage,
       link: '/collections/precious-gemstones/emerald'
     },
     {
       id: 'ruby-romance',
       title: 'Ruby Romance',
       description: 'Passionate red rubies that symbolize love and vitality in timeless settings.',
-      image: '/assets/images/collections/featured/ruby-romance.jpg', // Add this image
+      image: RubyRomanceImage,
       link: '/collections/precious-gemstones/ruby'
     }
   ];
@@ -80,18 +91,29 @@ const Collections = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div 
-        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${CollectionsHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Collections</h1>
-          <p className="max-w-2xl mx-auto">
-            Discover extraordinary gemstones and exquisite jewelry pieces from Harrico
-          </p>
-        </div>
-      </div>
+      <div className="relative h-[50vh] bg-[#08081a]">
+              {/* Image as separate element instead of background */}
+              <img 
+                src={CollectionsHeroImage} 
+                alt="Harrico hero"
+                className="absolute inset-0 w-full h-full object-cover opacity-90"
+                onError={(e) => {
+                  console.error('Failed to load hero image');
+                  // Keep the background color as fallback
+                  e.target.style.display = 'none';
+                }}
+              />
+              
+              {/* Content overlay */}
+              <div className="relative h-full z-10 flex items-center justify-center">
+                <div className="container text-white text-center">
+                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Collections</h1>
+                  <p className="max-w-2xl mx-auto">
+                    Discover extraordinary gemstones and exquisite jewelry pieces from Harrico
+                  </p>
+                </div>
+              </div>
+            </div>
 
       {/* Featured Collections */}
       <section className="py-16 md:py-24 bg-white">
