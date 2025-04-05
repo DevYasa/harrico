@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../components/common/SectionTitle';
 import GoldDivider from '../components/common/GoldDivider';
+import AnimatedPageHeader from '../components/common/AnimatedPageHeader';
 
 // Import images
 import HeroImage from '../assets/images/hero-bg.gif';
@@ -36,30 +37,12 @@ const About = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section with direct image */}
-      <div className="relative h-[50vh] bg-[#08081a]">
-        {/* Image as separate element instead of background */}
-        <img 
-          src={HeroImage} 
-          alt="Harrico hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-90"
-          onError={(e) => {
-            console.error('Failed to load hero image');
-            // Keep the background color as fallback
-            e.target.style.display = 'none';
-          }}
-        />
-        
-        {/* Content overlay */}
-        <div className="relative h-full z-10 flex items-center justify-center">
-          <div className="container text-white text-center">
-            <h1 className="text-4xl md:text-5xl font-serif mb-4">About Harrico</h1>
-            <p className="max-w-2xl mx-auto">
-              A legacy of excellence in Ceylon gemstones and fine jewelry since 1970
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="About Harrico" 
+        subtitle="A legacy of excellence in Ceylon gemstones and fine jewelry since 1970"
+        backgroundImage={HeroImage}
+      />
 
       {/* Welcome Message from CEO */}
       <section className="py-16 md:py-24 bg-white">
@@ -161,9 +144,9 @@ const About = () => {
             maxWidth="2xl"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {aboutSections.map((section) => (
-              <div key={section.id} className="border border-gray-200 p-8 hover:border-[#b9a16b] transition-colors duration-300">
+              <div key={section.id} className="border border-gray-200 p-8 hover:border-[#b9a16b] transition-colors duration-500">
                 <h3 className="text-2xl font-serif mb-4">{section.title}</h3>
                 <p className="text-gray-700 mb-6">{section.description}</p>
                 <Link 

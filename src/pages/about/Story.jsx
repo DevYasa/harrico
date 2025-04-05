@@ -2,6 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
+import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
 import StoryHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import StoryImage1 from '../../assets/images/about/story-bg2.gif'; // Add this image
 import StoryImage2 from '../../assets/images/about/story-bg1.gif'; // Add this image
@@ -59,25 +60,12 @@ const Story = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative h-[50vh] bg-[#08081a]" 
-                 style={{
-                   backgroundImage: `url(${StoryHeroImage})`,
-                   backgroundPosition: 'center',
-                   backgroundSize: 'cover',
-                   backgroundRepeat: 'no-repeat'
-                 }}>
-              
-              {/* Content overlay */}
-              <div className="relative h-full z-10 flex items-center justify-center">
-                <div className="container text-white text-center">
-                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Story</h1>
-                  <p className="max-w-2xl mx-auto">
-                    A journey of passion, dedication, and excellence in Ceylon gemstones
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="Our Story" 
+        subtitle="A journey of passion, dedication, and excellence in Ceylon gemstones"
+        backgroundImage={StoryHeroImage}
+      />
 
       {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -164,42 +152,42 @@ const Story = () => {
           <div className="mt-16">
             <h3 className="text-2xl font-serif mb-8 text-center">Precision Manufacturing</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Detailed Wax Modeling</h4>
                 <p className="text-gray-700">
                   Each piece begins with 3D printing of detailed wax models, capturing every intricate detail 
                   of the design with perfect precision.
                 </p>
               </div>
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Lost-Wax Casting</h4>
                 <p className="text-gray-700">
                   We use the traditional lost-wax casting method in precious metals, ensuring structural 
                   integrity and fine detail preservation.
                 </p>
               </div>
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Expert Stone Setting</h4>
                 <p className="text-gray-700">
                   Our specialized technicians expertly set each gemstone, using techniques ranging from 
                   prong to pavé to bezel settings.
                 </p>
               </div>
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Hand-Finishing</h4>
                 <p className="text-gray-700">
                   Every piece receives meticulous hand-finishing and polishing to achieve the perfect 
                   luster and texture.
                 </p>
               </div>
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Quality Control</h4>
                 <p className="text-gray-700">
                   We maintain rigorous quality control at every stage, ensuring each piece meets our 
                   exacting standards for beauty and durability.
                 </p>
               </div>
-              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white p-8 shadow-md rounded-lg hover:shadow-lg transition-shadow duration-500">
                 <h4 className="text-xl font-serif mb-4">Final Inspection</h4>
                 <p className="text-gray-700">
                   Master jewelers conduct final inspections, verifying that each creation meets the 
@@ -227,7 +215,7 @@ const Story = () => {
             {coreValues.map((value, index) => (
               <div 
                 key={index} 
-                className="flex flex-col items-center text-center p-8 border border-gray-200 hover:border-[#b9a16b] transition-colors duration-300"
+                className="flex flex-col items-center text-center p-8 border border-gray-200 hover:border-[#b9a16b] transition-colors duration-500"
               >
                 <div className="mb-6">{value.icon}</div>
                 <h3 className="text-xl font-serif mb-4">{value.title}</h3>

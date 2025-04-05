@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
+import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
 import NewsHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import BlueCollection from '../../assets/images/about/news/blue-collection.gif'; // Placeholder for the blue collection image
 import LondonExhibition from '../../assets/images/about/news/london-exhibition.gif'; // Placeholder for the London exhibition image
@@ -82,25 +83,12 @@ const News = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative h-[50vh] bg-[#08081a]" 
-                 style={{
-                   backgroundImage: `url(${NewsHeroImage})`,
-                   backgroundPosition: 'center',
-                   backgroundSize: 'cover',
-                   backgroundRepeat: 'no-repeat'
-                 }}>
-              
-              {/* Content overlay */}
-              <div className="relative h-full z-10 flex items-center justify-center">
-                <div className="container text-white text-center">
-                  <h1 className="text-4xl md:text-5xl font-serif mb-4">News & Events</h1>
-                  <p className="max-w-2xl mx-auto">
-                    Stay updated with the latest from Harrico
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="News & Events" 
+        subtitle="Stay updated with the latest from Harrico"
+        backgroundImage={NewsHeroImage}
+      />
 
       {/* Featured News */}
       {newsArticles.filter(article => article.featured).map((article) => (
@@ -122,7 +110,7 @@ const News = () => {
                 <p className="text-gray-700 mb-6 text-lg">{article.excerpt}</p>
                 <Link
                   to={`/news/${article.id}`}
-                  className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+                  className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-500"
                 >
                   READ MORE
                 </Link>
@@ -148,7 +136,7 @@ const News = () => {
             {newsArticles.filter(article => !article.featured).slice(0, 5).map((article, index) => (
               <div 
                 key={article.id} 
-                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:-translate-y-2"
+                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-500 hover:-translate-y-2"
               >
                 <div className="h-48 overflow-hidden">
                   <img 
@@ -176,7 +164,7 @@ const News = () => {
           <div className="text-center mt-12">
             <Link
               to="/news/archive"
-              className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+              className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-500"
             >
               VIEW ALL NEWS
             </Link>
@@ -200,7 +188,7 @@ const News = () => {
             {upcomingEvents.map((event) => (
               <div 
                 key={event.id} 
-                className="border border-gray-200 hover:border-[#b9a16b] transition-colors duration-300 p-6 md:p-8 flex flex-col md:flex-row"
+                className="border border-gray-200 hover:border-[#b9a16b] transition-colors duration-500 p-6 md:p-8 flex flex-col md:flex-row"
               >
                 <div className="md:w-1/3 mb-4 md:mb-0">
                   <p className="text-xs text-[#b9a16b] font-medium mb-1">DATE</p>
@@ -212,7 +200,7 @@ const News = () => {
                   <p className="text-gray-700 mb-4">{event.description}</p>
                   <Link
                     to={event.registerLink}
-                    className="inline-block border border-[#b9a16b] text-[#b9a16b] px-6 py-2 text-xs tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+                    className="inline-block border border-[#b9a16b] text-[#b9a16b] px-6 py-2 text-xs tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-500"
                   >
                     REGISTER
                   </Link>
@@ -224,7 +212,7 @@ const News = () => {
           <div className="text-center mt-12">
             <Link
               to="/events"
-              className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+              className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-500"
             >
               VIEW ALL EVENTS
             </Link>
@@ -253,7 +241,7 @@ const News = () => {
               />
               <button 
                 type="submit"
-                className="px-6 py-3 bg-[#b9a16b] text-white text-sm tracking-widest uppercase hover:bg-white hover:text-[#b9a16b] transition-all duration-300"
+                className="px-6 py-3 bg-[#b9a16b] text-white text-sm tracking-widest uppercase hover:bg-white hover:text-[#b9a16b] transition-all duration-500"
               >
                 SUBSCRIBE
               </button>

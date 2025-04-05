@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
 import HarryWinstonStyleTimeline from '../../components/about/HarryWinstonStyleTimeline';
+import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
 // Import hero image
 import HistoryHeroImage from '../../assets/images/hero-bg.gif';
 
@@ -72,25 +73,12 @@ const History = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative h-[50vh] bg-[#08081a]" 
-           style={{
-             backgroundImage: `url(${HistoryHeroImage})`,
-             backgroundPosition: 'center',
-             backgroundSize: 'cover',
-             backgroundRepeat: 'no-repeat'
-           }}>
-        
-        {/* Content overlay */}
-        <div className="relative h-full z-10 flex items-center justify-center">
-          <div className="container text-white text-center">
-            <h1 className="text-4xl md:text-5xl font-serif mb-4">History & Heritage</h1>
-            <p className="max-w-2xl mx-auto">
-              Over five decades of excellence in the world of gemstones and jewelry
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="History & Heritage" 
+        subtitle="Over five decades of excellence in the world of gemstones and jewelry"
+        backgroundImage={HistoryHeroImage}
+      />
 
       {/* Our History Introduction */}
       <section className="py-16 md:py-24 bg-white">
@@ -197,7 +185,7 @@ const History = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-300">
+            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-500">
               <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12 text-[#b9a16b]">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
@@ -209,7 +197,7 @@ const History = () => {
               </p>
             </div>
             
-            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-300">
+            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-500">
               <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12 text-[#b9a16b]">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.83 2.83m-2.83-2.83a48.454 48.454 0 00-7.86 0L5.25 7.8m13.5-2.82L12 21.75 5.25 7.8m13.5-2.82A49.18 49.18 0 0115.75 8m-7.5-5.82A49.18 49.18 0 018.25 8m5.5-5.82a48.394 48.394 0 00-5.5 0m5.5 0a48.394 48.394 0 010 5.82m0-5.82v5.82" />
@@ -221,7 +209,7 @@ const History = () => {
               </p>
             </div>
             
-            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-300">
+            <div className="text-center p-8 border border-transparent hover:border-[#b9a16b] transition-colors duration-500">
               <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-12 h-12 text-[#b9a16b]">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />

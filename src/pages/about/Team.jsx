@@ -2,6 +2,7 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
+import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
 import TeamHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
 import CEOImage from '../../assets/images/about/haris.gif'; // Same as used in About.jsx
 import MustafaAlHassoun from '../../assets/images/about/team/mustafa-al-hassoun.gif'; // Add this image
@@ -127,25 +128,12 @@ const Team = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="relative h-[50vh] bg-[#08081a]" 
-                 style={{
-                   backgroundImage: `url(${TeamHeroImage})`,
-                   backgroundPosition: 'center',
-                   backgroundSize: 'cover',
-                   backgroundRepeat: 'no-repeat'
-                 }}>
-              
-              {/* Content overlay */}
-              <div className="relative h-full z-10 flex items-center justify-center">
-                <div className="container text-white text-center">
-                  <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Team</h1>
-                  <p className="max-w-2xl mx-auto">
-                    Meet the dedicated professionals who bring the Harrico vision to life
-                  </p>
-                </div>
-              </div>
-            </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="Our Team" 
+        subtitle="Meet the dedicated professionals who bring the Harrico vision to life"
+        backgroundImage={TeamHeroImage}
+      />
 
       {/* Team Introduction */}
       <section className="py-16 md:py-24 bg-white">
@@ -188,7 +176,7 @@ const Team = () => {
             {boardMembers.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2"
+                className="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-500 hover:-translate-y-2"
               >
                 <div className="h-64 overflow-hidden">
                   {member.image ? (
@@ -229,7 +217,7 @@ const Team = () => {
             {managementTeam.map((member, index) => (
               <div 
                 key={index} 
-                className="bg-[#f8f8f8] shadow-md rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2"
+                className="bg-[#f8f8f8] shadow-md rounded-lg overflow-hidden transition-transform duration-500 hover:-translate-y-2"
               >
                 <div className="h-64 overflow-hidden">
                   {member.image ? (
@@ -270,7 +258,7 @@ const Team = () => {
             {departmentTeams.map((team, index) => (
               <div 
                 key={index} 
-                className="bg-white p-8 border border-gray-200 hover:border-[#b9a16b] transition-colors duration-300"
+                className="bg-white p-8 border border-gray-200 hover:border-[#b9a16b] transition-colors duration-500"
               >
                 <h3 className="text-xl font-serif mb-2">{team.department}</h3>
                 <p className="text-sm text-[#b9a16b] font-medium mb-4">{team.count}</p>
@@ -291,7 +279,7 @@ const Team = () => {
           </p>
           <a 
             href="/careers" 
-            className="inline-block border border-[#b9a16b] text-[#b9a16b] px-12 py-3 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+            className="inline-block border border-[#b9a16b] text-[#b9a16b] px-12 py-3 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-500"
           >
             VIEW OPPORTUNITIES
           </a>
