@@ -65,7 +65,7 @@ const LoadingScreen = () => {
   return (
     <div className="fixed inset-0 flex flex-col justify-between z-50 overflow-hidden">
       {/* Responsive Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         {isMobile ? (
           <img 
             src={BackgroundGifMobile}
@@ -81,8 +81,8 @@ const LoadingScreen = () => {
         )}
       </div>
       
-      {/* Dark overlay to improve text contrast - excluding header and footer */}
-      <div className="absolute top-[60px] bottom-[40px] left-0 right-0 bg-black/50"></div>
+      {/* Dark overlay to improve text contrast - completely removed */}
+      {/* <div className="absolute top-[60px] bottom-[40px] left-0 right-0 bg-black/50"></div> */}
       
       {/* Header Section - Only visible on mobile */}
       <div className={`relative z-10 ${isMobile ? 'block' : 'hidden'} bg-[#08081a] w-full`} 
@@ -167,7 +167,7 @@ const LoadingScreen = () => {
                animationDelay: '0.5s',
                opacity: 0
              }}>
-          <div className="h-0.5 w-16 md:w-24 bg-gradient-to-r from-transparent via-[#ffcc66] to-transparent relative overflow-hidden">
+          <div className="h-0.5 w-12 md:w-20 bg-gradient-to-r from-transparent via-[#ffcc66] to-transparent relative overflow-hidden">
             <div 
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
               style={{
@@ -177,7 +177,7 @@ const LoadingScreen = () => {
             ></div>
           </div>
           <div className="text-white mx-3 text-sm font-bold">LOADING</div>
-          <div className="h-0.5 w-16 md:w-24 bg-gradient-to-r from-transparent via-[#ffcc66] to-transparent relative overflow-hidden">
+          <div className="h-0.5 w-12 md:w-20 bg-gradient-to-r from-transparent via-[#ffcc66] to-transparent relative overflow-hidden">
             <div 
               className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent"
               style={{
