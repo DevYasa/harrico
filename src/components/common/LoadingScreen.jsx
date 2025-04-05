@@ -74,9 +74,6 @@ const LoadingScreen = () => {
         )}
       </div>
       
-      {/* Dark overlay to improve text contrast */}
-      <div className="absolute inset-0 bg-black/50"></div>
-      
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo Container */}
