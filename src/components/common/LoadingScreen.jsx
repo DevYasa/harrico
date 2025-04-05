@@ -1,7 +1,7 @@
 // src/components/common/LoadingScreen.jsx
 import React, { useState, useEffect } from 'react';
 import Logo from '../../assets/images/logo1.png';
-import BackgroundGifDesktop from '../../assets/images/sapphire-waves1.gif';
+import BackgroundGifDesktop from '../../assets/images/mb-bg.gif';
 import BackgroundGifMobile from '../../assets/images/mb-bg.gif';
 
 const LoadingScreen = () => {
