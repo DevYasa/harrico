@@ -6,12 +6,14 @@ import SapphireImage3 from '../../assets/images/home/desktop/bg4.gif';
 import SapphireImage4 from '../../assets/images/home/desktop/bg4.gif'; 
 import SapphireImage5 from '../../assets/images/home/desktop/bg4.gif'; // Added fifth image
 import SapphireImage6 from '../../assets/images/home/desktop/bg4.gif'; // Added sixth image
-import SapphireImageMobile1 from '../../assets/images/home/mobile/mbg15.gif';
+import SapphireImage7 from '../../assets/images/home/desktop/bg4.gif'; // Added seventh image
+import SapphireImageMobile1 from '../../assets/images/home/mobile/mbg1.gif';
 import SapphireImageMobile2 from '../../assets/images/home/mobile/mbg17.gif';
 import SapphireImageMobile3 from '../../assets/images/home/mobile/mbg19.gif';
 import SapphireImageMobile4 from '../../assets/images/home/mobile/mbg16.gif';
-import SapphireImageMobile5 from '../../assets/images/home/mobile/mbg20.gif'; // Added fifth mobile image
+import SapphireImageMobile5 from '../../assets/images/home/mobile/mbg2.gif'; // Added fifth mobile image
 import SapphireImageMobile6 from '../../assets/images/home/mobile/mbg21.gif'; // Added sixth mobile image
+import SapphireImageMobile7 from '../../assets/images/home/mobile/mbg3.gif'; // Added seventh mobile image
 import BridalImage from '../../assets/images/home/desktop/bg4.gif';
 import BridalImageMobile from '../../assets/images/home/mobile/mbg5.gif';
 import EmeraldImage from '../../assets/images/home/desktop/bg.gif';
@@ -46,6 +48,10 @@ const ShowcaseSections = () => {
     {
       desktop: SapphireImage6,
       mobile: SapphireImageMobile6 || SapphireImage6
+    },
+    {
+      desktop: SapphireImage7,
+      mobile: SapphireImageMobile7 || SapphireImage7
     }
   ];
   
