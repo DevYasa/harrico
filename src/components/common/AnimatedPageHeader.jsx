@@ -17,20 +17,20 @@ const AnimatedPageHeader = ({ title, subtitle, backgroundImage }) => {
   return (
     <>
       {/* Header Section with Logo Lines */}
-      <header className={`bg-[#08081a] text-white pb-8 relative ${pageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
+      <header className={`bg-[#08081a] text-white pb-6 md:pb-8 relative ${pageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
         {/* Logo Lines */}
         <div className="flex items-center justify-center pt-3 pb-2">
-          <div className="w-24 h-px bg-[#b9a16b] transform transition-transform duration-700 ease-out scale-x-0 origin-right" 
+          <div className="w-16 md:w-24 h-px bg-[#b9a16b] transform transition-transform duration-700 ease-out scale-x-0 origin-right" 
                style={{transform: pageLoaded ? 'scaleX(1)' : 'scaleX(0)'}}></div>
           <div className="mx-2 transition-transform duration-700 ease-out delay-300" 
                style={{transform: pageLoaded ? 'scale(1)' : 'scale(0)'}}>
           </div>
-          <div className="w-24 h-px bg-[#b9a16b] transform transition-transform duration-700 ease-out scale-x-0 origin-left" 
+          <div className="w-16 md:w-24 h-px bg-[#b9a16b] transform transition-transform duration-700 ease-out scale-x-0 origin-left" 
                style={{transform: pageLoaded ? 'scaleX(1)' : 'scaleX(0)'}}></div>
         </div>
         
         {/* Page Title with text reveal animation */}
-        <h1 className="text-3xl md:text-4xl font-serif text-center pt-2 overflow-hidden">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-center pt-2 overflow-hidden px-4">
           <span className="block transform transition-transform duration-700 delay-700" 
                 style={{transform: pageLoaded ? 'translateY(0)' : 'translateY(100%)'}}>
             {title}
@@ -39,7 +39,7 @@ const AnimatedPageHeader = ({ title, subtitle, backgroundImage }) => {
       </header>
       
       {/* Hero Section with Background Image */}
-      <div className={`relative h-[50vh] bg-[#08081a] ${pageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
+      <div className={`relative h-[40vh] md:h-[50vh] bg-[#08081a] ${pageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700 overflow-hidden`}>
         {/* Image as separate element instead of background */}
         <img 
           src={backgroundImage} 
@@ -54,9 +54,9 @@ const AnimatedPageHeader = ({ title, subtitle, backgroundImage }) => {
         
         {/* Content overlay with text reveal animation */}
         <div className="relative h-full z-10 flex items-center justify-center">
-          <div className="container text-white text-center">
+          <div className="container mx-auto px-4 md:px-6 text-white text-center">
             <p 
-              className="max-w-2xl mx-auto overflow-hidden transform transition-all duration-700 delay-500"
+              className="max-w-2xl mx-auto overflow-hidden transform transition-all duration-700 delay-500 text-sm md:text-base"
               style={{
                 opacity: pageLoaded ? '1' : '0',
                 transform: pageLoaded ? 'translateY(0)' : 'translateY(20px)'

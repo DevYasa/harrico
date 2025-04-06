@@ -45,11 +45,11 @@ const About = () => {
       />
 
       {/* Welcome Message from CEO */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="w-full md:w-1/3 flex justify-center">
-              <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-[#b9a16b]">
+              <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#b9a16b]">
                 <img 
                   src={CEOImage} 
                   alt="Haris Yusuf - CEO & Managing Director" 
@@ -64,11 +64,11 @@ const About = () => {
               </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h2 className="text-3xl font-serif mb-6">Welcome Message</h2>
-              <h3 className="font-serif text-xl mb-4">Haris Yusuf</h3>
-              <p className="text-sm uppercase tracking-widest text-gray-500 mb-6">CEO & Managing Director</p>
+              <h2 className="text-2xl md:text-3xl font-serif mb-4 md:mb-6">Welcome Message</h2>
+              <h3 className="font-serif text-lg md:text-xl mb-3 md:mb-4">Haris Yusuf</h3>
+              <p className="text-sm uppercase tracking-widest text-gray-500 mb-4 md:mb-6">CEO & Managing Director</p>
               
-              <div className="space-y-4 text-gray-700">
+              <div className="space-y-3 md:space-y-4 text-gray-700">
                 <p>Dear Valued Partners,</p>
                 <p>
                   I am pleased to present Harrico Group's vision and commitment to excellence.
@@ -98,8 +98,8 @@ const About = () => {
       <GoldDivider />
 
       {/* Vision & Mission */}
-      <section className="py-16 md:py-24 bg-[#f8f8f8]">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Vision & Mission" 
             subtitle="" 
@@ -107,10 +107,10 @@ const About = () => {
             maxWidth="2xl"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 mt-8 md:mt-12">
             <div className="text-center">
-              <h3 className="text-2xl font-serif mb-6">Our Vision</h3>
-              <div className="w-12 h-1 bg-[#b9a16b] mx-auto mb-6"></div>
+              <h3 className="text-xl md:text-2xl font-serif mb-4 md:mb-6">Our Vision</h3>
+              <div className="w-12 h-1 bg-[#b9a16b] mx-auto mb-4 md:mb-6"></div>
               <p className="text-gray-700">
                 To be a globally recognized leader in our core industries, 
                 delivering exceptional quality and value while honoring our 
@@ -119,8 +119,8 @@ const About = () => {
             </div>
             
             <div className="text-center">
-              <h3 className="text-2xl font-serif mb-6">Our Mission</h3>
-              <div className="w-12 h-1 bg-[#b9a16b] mx-auto mb-6"></div>
+              <h3 className="text-xl md:text-2xl font-serif mb-4 md:mb-6">Our Mission</h3>
+              <div className="w-12 h-1 bg-[#b9a16b] mx-auto mb-4 md:mb-6"></div>
               <p className="text-gray-700">
                 To deliver exceptional quality across our diverse business 
                 divisions while honoring our heritage, embracing innovation, 
@@ -135,8 +135,8 @@ const About = () => {
       <GoldDivider />
       
       {/* Explore About Sections */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Discover More About Harrico" 
             subtitle="" 
@@ -144,11 +144,11 @@ const About = () => {
             maxWidth="2xl"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
             {aboutSections.map((section) => (
-              <div key={section.id} className="border border-gray-200 p-8 hover:border-[#b9a16b] transition-colors duration-500">
-                <h3 className="text-2xl font-serif mb-4">{section.title}</h3>
-                <p className="text-gray-700 mb-6">{section.description}</p>
+              <div key={section.id} className="border border-gray-200 p-6 md:p-8 hover:border-[#b9a16b] transition-colors duration-500">
+                <h3 className="text-xl md:text-2xl font-serif mb-3 md:mb-4">{section.title}</h3>
+                <p className="text-gray-700 mb-4 md:mb-6">{section.description}</p>
                 <Link 
                   to={section.link} 
                   className="inline-block text-[#b9a16b] text-sm tracking-wider uppercase relative group"

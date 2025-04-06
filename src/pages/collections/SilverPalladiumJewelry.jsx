@@ -3,7 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import SilverPalladiumHeroImage from '../../assets/images/collections/sapphire-jewelry.jpg'; // Add this image
+import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
+import SilverPalladiumHeroImage from '../../assets/images/collections/sapphire-jewelry.jpg';
 
 const SilverPalladiumJewelry = () => {
   // Jewelry types
@@ -11,25 +12,25 @@ const SilverPalladiumJewelry = () => {
     {
       type: 'Rings',
       description: 'Contemporary silver palladium rings that beautifully showcase our colorful gemstones.',
-      image: '/assets/images/collections/jewelry/silver-palladium-rings.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-rings.jpg',
       link: '/collections/silver-palladium/rings'
     },
     {
       type: 'Necklaces',
-      description: 'Elegant pendants and necklaces crafted in bright silver palladium to highlight our Ceylon gems.',
-      image: '/assets/images/collections/jewelry/silver-palladium-necklaces.jpg', // Add this image
+      description: 'Elegant platinum necklaces and pendants crafted to highlight our finest Ceylon gems.',
+      image: '/assets/images/collections/jewelry/silver-palladium-necklaces.jpg',
       link: '/collections/silver-palladium/necklaces'
     },
     {
       type: 'Earrings',
       description: 'Stylish silver palladium earrings from modern studs to statement drops.',
-      image: '/assets/images/collections/jewelry/silver-palladium-earrings.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-earrings.jpg',
       link: '/collections/silver-palladium/earrings'
     },
     {
       type: 'Bracelets',
       description: 'Contemporary bracelets that combine the bright white of silver palladium with colorful gems.',
-      image: '/assets/images/collections/jewelry/silver-palladium-bracelets.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-bracelets.jpg',
       link: '/collections/silver-palladium/bracelets'
     }
   ];
@@ -40,44 +41,37 @@ const SilverPalladiumJewelry = () => {
       id: 'silver-palladium-blue',
       name: 'Blue Gem Collection',
       description: 'Silver palladium beautifully showcases the vibrant blues of sapphires, aquamarines, and blue topaz.',
-      image: '/assets/images/collections/jewelry/silver-palladium-blue.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-blue.jpg',
       link: '/collections/silver-palladium/blue-gems'
     },
     {
       id: 'silver-palladium-modern',
       name: 'Modern Design Collection',
       description: 'Contemporary jewelry designs that highlight the bright white of silver palladium with clean lines and bold shapes.',
-      image: '/assets/images/collections/jewelry/silver-palladium-modern.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-modern.jpg',
       link: '/collections/silver-palladium/modern'
     },
     {
       id: 'silver-palladium-color',
       name: 'Color Splash Collection',
       description: 'Vibrant colored gemstones pop against the bright white backdrop of silver palladium in these eye-catching pieces.',
-      image: '/assets/images/collections/jewelry/silver-palladium-color.jpg', // Add this image
+      image: '/assets/images/collections/jewelry/silver-palladium-color.jpg',
       link: '/collections/silver-palladium/color-splash'
     }
   ];
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div 
-        className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${SilverPalladiumHeroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div className="container relative z-10 text-white text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-4">Silver Palladium Jewelry</h1>
-          <p className="max-w-2xl mx-auto">
-            Contemporary elegance with our innovative silver palladium alloy, showcasing gemstones with modern style
-          </p>
-        </div>
-      </div>
+      {/* Animated Header and Hero Section */}
+      <AnimatedPageHeader 
+        title="Silver Palladium Jewelry" 
+        subtitle="Contemporary elegance with our innovative silver palladium alloy, showcasing gemstones with modern style"
+        backgroundImage={SilverPalladiumHeroImage}
+      />
 
       {/* Introduction */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Silver Palladium Innovation" 
             subtitle="CONTEMPORARY LUXURY" 
@@ -85,8 +79,8 @@ const SilverPalladiumJewelry = () => {
             maxWidth="2xl"
           />
           
-          <div className="max-w-3xl mx-auto mt-8 text-center">
-            <p className="text-gray-700 mb-6">
+          <div className="max-w-3xl mx-auto mt-6 md:mt-8 text-center">
+            <p className="text-gray-700 mb-4 md:mb-6">
               Our silver palladium jewelry combines the bright white appearance of silver with the durability 
               and tarnish resistance of palladium. This innovative alloy provides the perfect balance of 
               contemporary style, durability, and value.
@@ -101,8 +95,8 @@ const SilverPalladiumJewelry = () => {
       </section>
 
       {/* Featured Collections */}
-      <section className="py-16 md:py-24 bg-[#f8f8f8]">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Featured Collections" 
             subtitle="CONTEMPORARY STYLE" 
@@ -110,21 +104,21 @@ const SilverPalladiumJewelry = () => {
             maxWidth="2xl"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
             {featuredCollections.map((collection) => (
               <Link 
                 key={collection.id}
                 to={collection.link}
                 className="group block"
               >
-                <div className="overflow-hidden rounded-lg shadow-lg mb-4">
+                <div className="overflow-hidden rounded-lg shadow-lg mb-3 md:mb-4">
                   <img 
                     src={collection.image} 
                     alt={collection.name} 
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-48 md:h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
-                <h3 className="text-xl font-serif mb-2">{collection.name}</h3>
+                <h3 className="text-lg md:text-xl font-serif mb-2">{collection.name}</h3>
                 <p className="text-gray-700 mb-3 text-sm">{collection.description}</p>
                 <span className="text-sm text-[#b9a16b] tracking-wider uppercase relative inline-flex items-center">
                   EXPLORE <span className="ml-1">›</span>
@@ -139,8 +133,8 @@ const SilverPalladiumJewelry = () => {
       <GoldDivider />
 
       {/* Shop by Type */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 md:py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
           <SectionTitle 
             title="Shop by Jewelry Type" 
             subtitle="CATEGORIES" 
@@ -148,7 +142,7 @@ const SilverPalladiumJewelry = () => {
             maxWidth="2xl"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12">
             {jewelryTypes.map((item, index) => (
               <Link 
                 key={index}
@@ -162,8 +156,8 @@ const SilverPalladiumJewelry = () => {
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                 </div>
-                <div className="md:w-2/3 p-6 flex flex-col justify-center">
-                  <h3 className="text-xl font-serif mb-2">{item.type}</h3>
+                <div className="md:w-2/3 p-4 md:p-6 flex flex-col justify-center">
+                  <h3 className="text-lg md:text-xl font-serif mb-2">{item.type}</h3>
                   <p className="text-gray-700 mb-4 text-sm">{item.description}</p>
                   <span className="text-sm text-[#b9a16b] tracking-wider uppercase inline-flex items-center">
                     VIEW COLLECTION <span className="ml-1">›</span>
@@ -178,9 +172,9 @@ const SilverPalladiumJewelry = () => {
       <GoldDivider />
 
       {/* Silver Palladium Education */}
-      <section className="py-16 md:py-24 bg-[#f8f8f8]">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#f8f8f8]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             <div className="w-full md:w-1/2">
               <SectionTitle 
                 title="Understanding Silver Palladium" 
@@ -188,7 +182,7 @@ const SilverPalladiumJewelry = () => {
                 alignment="left"
               />
               
-              <div className="mt-8 space-y-6">
+              <div className="mt-6 md:mt-8 space-y-4 md:space-y-6">
                 <p className="text-gray-700">
                   Silver palladium is an innovative alloy that combines the bright white appearance of silver 
                   with the tarnish resistance and durability of palladium, a precious metal in the platinum family.
@@ -202,7 +196,7 @@ const SilverPalladiumJewelry = () => {
                 </p>
                 <Link
                   to="/education/silver-palladium"
-                  className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300 mt-4"
+                  className="inline-block border border-[#b9a16b] text-[#b9a16b] px-6 py-2 md:px-8 md:py-2 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300 mt-4"
                 >
                   LEARN MORE
                 </Link>
@@ -210,20 +204,20 @@ const SilverPalladiumJewelry = () => {
             </div>
             <div className="w-full md:w-1/2">
               <div className="grid grid-cols-1 gap-4">
-                <div className="bg-white p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <h4 className="text-lg font-serif mb-3">Enhanced Durability</h4>
+                <div className="bg-white p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <h4 className="text-base md:text-lg font-serif mb-2 md:mb-3">Enhanced Durability</h4>
                   <p className="text-sm text-gray-700">Silver palladium offers improved strength and scratch resistance compared to traditional sterling silver.</p>
                 </div>
-                <div className="bg-white p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <h4 className="text-lg font-serif mb-3">Tarnish Resistance</h4>
+                <div className="bg-white p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <h4 className="text-base md:text-lg font-serif mb-2 md:mb-3">Tarnish Resistance</h4>
                   <p className="text-sm text-gray-700">The addition of palladium significantly improves tarnish resistance for longer-lasting brightness.</p>
                 </div>
-                <div className="bg-white p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <h4 className="text-lg font-serif mb-3">Contemporary Aesthetic</h4>
+                <div className="bg-white p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <h4 className="text-base md:text-lg font-serif mb-2 md:mb-3">Contemporary Aesthetic</h4>
                   <p className="text-sm text-gray-700">The bright white color makes silver palladium perfect for modern, clean-lined jewelry designs.</p>
                 </div>
-                <div className="bg-white p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <h4 className="text-lg font-serif mb-3">Excellent Value</h4>
+                <div className="bg-white p-4 md:p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <h4 className="text-base md:text-lg font-serif mb-2 md:mb-3">Excellent Value</h4>
                   <p className="text-sm text-gray-700">Silver palladium offers an affordable alternative to white gold and platinum while providing superior quality to standard silver.</p>
                 </div>
               </div>
@@ -233,17 +227,17 @@ const SilverPalladiumJewelry = () => {
       </section>
 
       {/* Custom Jewelry CTA */}
-      <section className="py-16 md:py-24 bg-[#08081a] text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif mb-6">Custom Silver Palladium Jewelry</h2>
-          <p className="max-w-2xl mx-auto mb-10">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#08081a] text-white">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-4 md:mb-6">Custom Silver Palladium Jewelry</h2>
+          <p className="max-w-2xl mx-auto mb-6 md:mb-10">
             Create a contemporary piece featuring your choice of our exceptional Ceylon gemstones set in 
             silver palladium. Our designers will work with you to create a modern masterpiece that 
             reflects your personal style. Custom designs delivered within 3 weeks.
           </p>
           <Link 
             to="/collections/custom-designs" 
-            className="inline-block border border-[#b9a16b] text-[#b9a16b] px-12 py-3 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
+            className="inline-block border border-[#b9a16b] text-[#b9a16b] px-8 py-2 md:px-12 md:py-3 text-sm tracking-widest uppercase hover:bg-[#b9a16b] hover:text-white transition-all duration-300"
           >
             START YOUR DESIGN
           </Link>
