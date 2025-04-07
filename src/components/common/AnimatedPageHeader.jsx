@@ -19,7 +19,7 @@ const AnimatedPageHeader = ({ title, subtitle, backgroundImage }) => {
       {/* Header Section with Logo Lines */}
       <header className={`bg-[#08081a] text-white pb-6 md:pb-8 relative ${pageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
         {/* Logo Lines */}
-        <div className="flex items-center justify-center pt-3 pb-2">
+        <div className="flex items-center justify-center pt-4 pb-2">
           <div className="w-16 md:w-24 h-px bg-[#b9a16b] transform transition-transform duration-700 ease-out scale-x-0 origin-right" 
                style={{transform: pageLoaded ? 'scaleX(1)' : 'scaleX(0)'}}></div>
           <div className="mx-2 transition-transform duration-700 ease-out delay-300" 
