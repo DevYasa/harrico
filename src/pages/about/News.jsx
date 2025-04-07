@@ -3,95 +3,29 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
-import NewsHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
-import BlueCollection from '../../assets/images/about/news/blue-collection.gif'; // Placeholder for the blue collection image
-import LondonExhibition from '../../assets/images/about/news/london-exhibition.gif'; // Placeholder for the London exhibition image
-import SustainableMining from '../../assets/images/about/news/sustainable-mining.gif'; // Placeholder for the sustainable mining image
-import Scholarship from '../../assets/images/about/news/scholarship.gif'; // Placeholder for the scholarship image
-import Anniversary from '../../assets/images/about/news/anniversary.gif'; // Placeholder for the anniversary image
+
+// Import data
+import { newsData } from '../../data/mockdata';
+
+// Import hero image
+import NewsHeroImage from '../../assets/images/hero-bg.gif';
 
 const News = () => {
-  // Latest news articles
-  const newsArticles = [
-    {
-      id: 'new-collection-2025',
-      title: 'Harrico Unveils Exclusive "Ceylon Blue" Collection',
-      date: 'March 15, 2025',
-      category: 'Collections',
-      excerpt: 'Harrico launches its highly anticipated Ceylon Blue Collection, featuring rare blue sapphires in contemporary designs.',
-      image: BlueCollection,
-      featured: true
-    },
-    {
-      id: 'london-exhibition',
-      title: 'Harrico to Showcase Rare Gems at London Exhibition',
-      date: 'February 28, 2025',
-      category: 'Events',
-      excerpt: 'Join us at the International Gem Exhibition in London where we\'ll be presenting our most extraordinary Ceylon gemstones.',
-      image: LondonExhibition,
-      featured: false
-    },
-    {
-      id: 'sustainable-mining',
-      title: 'Harrico Expands Sustainable Mining Practices',
-      date: 'January 20, 2025',
-      category: 'Corporate',
-      excerpt: 'Our commitment to sustainability grows with new eco-friendly mining techniques implemented across all our Ceylon operations.',
-      image: SustainableMining,
-      featured: false
-    },
-    {
-      id: 'scholarship-program',
-      title: 'Harrico Launches Gemology Scholarship Program',
-      date: 'November 5, 2024',
-      category: 'Community',
-      excerpt: 'Our new educational initiative will provide full scholarships to promising students interested in pursuing careers in gemology.',
-      image: Scholarship,
-      featured: false
-    },
-    {
-      id: 'anniversary-celebration',
-      title: 'Harrico Celebrates 55 Years of Excellence',
-      date: 'October 30, 2024',
-      category: 'Events',
-      excerpt: 'Join us for a special anniversary celebration at our flagship store, featuring a retrospective exhibition of our heritage pieces.',
-      image: Anniversary,
-      featured: false
-    }
-  ];
-
-  // Upcoming events
-  const upcomingEvents = [
-    {
-      id: 'trunk-show-kl',
-      title: 'Bridal Collection Trunk Show',
-      date: 'April 15-17, 2025',
-      location: 'Flagship Store, Kuala Lumpur',
-      description: 'Experience our complete bridal jewelry collection with personalized styling sessions and special pricing.',
-      registerLink: '/events/bridal-trunk-show'
-    },
-    {
-      id: 'gem-talk',
-      title: 'The Magic of Ceylon Sapphires',
-      date: 'April 25, 2025',
-      location: 'Penang Showroom',
-      description: 'Join our Chief Gemologist for an educational talk about the unique properties of Ceylon sapphires.',
-      registerLink: '/events/sapphire-talk'
-    }
-  ];
+  const { featuredArticles, latestArticles, upcomingEvents } = newsData;
 
   return (
     <div className="bg-white">
-      {/* Animated Header and Hero Section */}
-      <AnimatedPageHeader 
-        title="News & Events" 
-        subtitle="Stay updated with the latest from Harrico"
-        backgroundImage={NewsHeroImage}
-      />
+      {/* Simple Image Header */}
+      <div className="w-full h-96 relative">
+        <img 
+          src={NewsHeroImage} 
+          alt="Harrico News & Events" 
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Featured News */}
-      {newsArticles.filter(article => article.featured).map((article) => (
+      {featuredArticles.map((article) => (
         <section key={article.id} className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center gap-12">
@@ -133,7 +67,7 @@ const News = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {newsArticles.filter(article => !article.featured).slice(0, 5).map((article, index) => (
+            {latestArticles.map((article, index) => (
               <div 
                 key={article.id} 
                 className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-500 hover:-translate-y-2"

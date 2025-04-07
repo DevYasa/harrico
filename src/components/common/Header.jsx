@@ -30,7 +30,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Navigation items with submenus
+  // Updated navigation items with the new structure
   const navItems = [
     {
       name: 'ABOUT US',
@@ -44,50 +44,54 @@ const Header = () => {
     },
     {
       name: 'GEMSTONES',
-      path: '/collections',
+      path: '/gemstones',
       submenu: [
-        { name: 'PRECIOUS GEMSTONES', path: '/collections/precious-gemstones' },
-        { name: 'BLUE SAPPHIRE', path: '/collections/precious-gemstones/blue-sapphire' },
-        { name: 'EMERALD', path: '/collections/precious-gemstones/emerald' },
-        { name: 'RUBY', path: '/collections/precious-gemstones/ruby' },
-        { name: 'YELLOW SAPPHIRE', path: '/collections/precious-gemstones/yellow-sapphire' },
-        { name: 'PINK SAPPHIRE', path: '/collections/precious-gemstones/pink-sapphire' },
-        { name: 'OTHER PRECIOUS GEMS', path: '/collections/precious-gemstones' },
-        { name: 'SEMI-PRECIOUS GEMSTONES', path: '/collections/semi-precious-gemstones' }
+        // Only show "By Collection" items for gemstones
+        { name: 'BY COLLECTION', path: '', isHeading: true },
+        { name: 'PRECIOUS GEMSTONES', path: '/gemstones/precious' },
+        { name: 'BLUE SAPPHIRE', path: '/gemstones/precious/blue-sapphire' },
+        { name: 'EMERALD', path: '/gemstones/precious/emerald' },
+        { name: 'RUBY', path: '/gemstones/precious/ruby' },
+        { name: 'YELLOW SAPPHIRE', path: '/gemstones/precious/yellow-sapphire' },
+        { name: 'PINK SAPPHIRE', path: '/gemstones/precious/pink-sapphire' },
+        { name: 'SEMI-PRECIOUS GEMSTONES', path: '/gemstones/semi-precious' },
+        { name: 'VIEW ALL GEMSTONES', path: '/gemstones', isViewAll: true }
       ]
     },
     {
       name: 'JEWELRY',
-      path: '/collections',
+      path: '/jewelry',
       submenu: [
-        { name: 'GOLD JEWELRY', path: '/collections/gold-jewelry' },
-        { name: '22KT GOLD', path: '/collections/gold-jewelry/22kt' },
-        { name: '18KT GOLD', path: '/collections/gold-jewelry/18kt-yellow' },
-        { name: '14KT GOLD', path: '/collections/gold-jewelry/14kt-yellow' },
-        { name: 'WHITE GOLD', path: '/collections/gold-jewelry/18kt-white' },
-        { name: 'PLATINUM JEWELRY', path: '/collections/platinum-jewelry' },
-        { name: 'SILVER PALLADIUM', path: '/collections/silver-palladium' }
-      ]
-    },
-    {
-      name: 'BY CATEGORY',
-      path: '/collections',
-      submenu: [
-        { name: 'RINGS', path: '/collections/rings' },
-        { name: 'NECKLACES', path: '/collections/necklaces' },
-        { name: 'EARRINGS', path: '/collections/earrings' },
-        { name: 'BRACELETS', path: '/collections/bracelets' },
-        { name: 'PENDANTS', path: '/collections/pendants' },
-        { name: 'BRIDAL JEWELRY', path: '/collections/bridal' }
+        // Show both "By Collection" and "By Category" for jewelry
+        { name: 'BY COLLECTION', path: '', isHeading: true },
+        { name: 'GOLD JEWELRY', path: '/jewelry/gold' },
+        { name: '22KT GOLD', path: '/jewelry/gold/22kt' },
+        { name: '18KT GOLD', path: '/jewelry/gold/18kt-yellow' },
+        { name: 'PLATINUM JEWELRY', path: '/jewelry/platinum' },
+        { name: 'SILVER PALLADIUM', path: '/jewelry/silver-palladium' },
+        { name: 'VIEW ALL COLLECTIONS', path: '/jewelry', isViewAll: true },
+        
+        // Add spacing between sections
+        { name: '', path: '', isDivider: true },
+        
+        // By Category section
+        { name: 'BY CATEGORY', path: '', isHeading: true },
+        { name: 'RINGS', path: '/categories/rings' },
+        { name: 'NECKLACES AND PENDANTS', path: '/categories/necklaces' },
+        { name: 'EARRINGS', path: '/categories/earrings' },
+        { name: 'BRACELETS', path: '/categories/bracelets' },
+        { name: 'WEDDING BANDS', path: '/categories/wedding-bands' },
+        { name: 'ENGAGEMENT RINGS', path: '/categories/engagement-rings' },
+        { name: 'VIEW ALL CATEGORIES', path: '/categories', isViewAll: true }
       ]
     },
     {
       name: 'CUSTOM DESIGNS',
-      path: '/collections/custom-designs',
+      path: '/custom-designs',
       submenu: [
-        { name: 'DESIGN PROCESS', path: '/collections/custom-designs' },
-        { name: 'INSPIRATION GALLERY', path: '/collections/custom-designs/gallery' },
-        { name: 'ENGAGEMENT RINGS', path: '/collections/custom-designs/engagement' },
+        { name: 'DESIGN PROCESS', path: '/custom-designs/process' },
+        { name: 'INSPIRATION GALLERY', path: '/custom-designs/gallery' },
+        { name: 'ENGAGEMENT RINGS', path: '/custom-designs/engagement' },
         { name: 'SCHEDULE CONSULTATION', path: '/contact/appointment' }
       ]
     },
@@ -194,13 +198,36 @@ const Header = () => {
                         <div className="bg-[#08081a] shadow-lg border border-gray-700/30">
                           <div className="p-4">
                             {item.submenu.map((subItem, subIndex) => (
-                              <div key={subIndex} className="py-2 border-b border-gray-700/30 last:border-0">
-                                <Link 
-                                  to={subItem.path}
-                                  className="block text-xs tracking-wider text-white hover:text-[#b9a16b] transition-colors"
-                                >
-                                  {subItem.name}
-                                </Link>
+                              <div key={subIndex}>
+                                {subItem.isHeading ? (
+                                  // Render section heading
+                                  <div className="py-2 text-xs text-[#b9a16b] font-semibold tracking-wider">
+                                    {subItem.name}
+                                  </div>
+                                ) : subItem.isDivider ? (
+                                  // Render divider
+                                  <div className="my-2 border-b border-gray-700/30"></div>
+                                ) : subItem.isViewAll ? (
+                                  // View all link (styled differently)
+                                  <div className="py-2 mt-1">
+                                    <Link 
+                                      to={subItem.path}
+                                      className="block text-xs tracking-wider text-[#b9a16b] hover:underline transition-colors"
+                                    >
+                                      {subItem.name}
+                                    </Link>
+                                  </div>
+                                ) : (
+                                  // Render regular menu item
+                                  <div className="py-2 border-b border-gray-700/30 last:border-0">
+                                    <Link 
+                                      to={subItem.path}
+                                      className="block text-xs tracking-wider text-white hover:text-[#b9a16b] transition-colors"
+                                    >
+                                      {subItem.name}
+                                    </Link>
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>
@@ -329,14 +356,35 @@ const Header = () => {
                     {subMenuOpen && item.submenu && (
                       <div className="py-2 pl-4 mb-3">
                         {item.submenu.map((subItem, subIndex) => (
-                          <Link 
-                            key={subIndex}
-                            to={subItem.path}
-                            className="block py-2 text-sm text-gray-600"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {subItem.name}
-                          </Link>
+                          <div key={subIndex}>
+                            {subItem.isHeading ? (
+                              // Render section heading for mobile
+                              <div className="py-2 text-sm text-[#b9a16b] font-semibold">
+                                {subItem.name}
+                              </div>
+                            ) : subItem.isDivider ? (
+                              // Render divider for mobile
+                              <div className="my-2 border-b border-gray-200"></div>
+                            ) : subItem.isViewAll ? (
+                              // View all link (styled differently) for mobile
+                              <Link 
+                                to={subItem.path}
+                                className="block py-2 text-sm text-[#b9a16b]"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ) : (
+                              // Render regular menu item for mobile
+                              <Link 
+                                to={subItem.path}
+                                className="block py-2 text-sm text-gray-600"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            )}
+                          </div>
                         ))}
                       </div>
                     )}

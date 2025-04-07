@@ -17,18 +17,33 @@ const Story = lazy(() => import('./pages/about/Story'));
 const Team = lazy(() => import('./pages/about/Team'));
 const News = lazy(() => import('./pages/about/News'));
 
-// Collections main page
-const Collections = lazy(() => import('./pages/Collections'));
+// Gemstone Pages
+const Gemstones = lazy(() => import('./pages/gemstones/Gemstones')); // New main gemstone page
+const PreciousGemstones = lazy(() => import('./pages/gemstones/PreciousGemstones'));
+const SemiPreciousGemstones = lazy(() => import('./pages/gemstones/SemiPreciousGemstones'));
+// Add individual gemstone pages as needed
+const BlueSapphire = lazy(() => import('./pages/gemstones/precious/BlueSapphire'));
+const Emerald = lazy(() => import('./pages/gemstones/precious/Emerald'));
+const Ruby = lazy(() => import('./pages/gemstones/precious/Ruby'));
 
-// Gemstone collections
-const PreciousGemstones = lazy(() => import('./pages/collections/PreciousGemstones'));
-const SemiPreciousGemstones = lazy(() => import('./pages/collections/SemiPreciousGemstones'));
+// Jewelry Pages 
+const Jewelry = lazy(() => import('./pages/jewelry/Jewelry')); // New main jewelry page
+const GoldJewelry = lazy(() => import('./pages/jewelry/GoldJewelry'));
+const PlatinumJewelry = lazy(() => import('./pages/jewelry/PlatinumJewelry'));
+const SilverPalladiumJewelry = lazy(() => import('./pages/jewelry/SilverPalladiumJewelry'));
 
-// Jewelry collections
-const GoldJewelry = lazy(() => import('./pages/collections/GoldJewelry'));
-const PlatinumJewelry = lazy(() => import('./pages/collections/PlatinumJewelry'));
-const SilverPalladiumJewelry = lazy(() => import('./pages/collections/SilverPalladiumJewelry'));
-const CustomDesigns = lazy(() => import('./pages/collections/CustomDesigns'));
+// Categories Pages
+const Categories = lazy(() => import('./pages/categories/Categories')); // New main categories page
+const Rings = lazy(() => import('./pages/categories/Rings'));
+const Necklaces = lazy(() => import('./pages/categories/Necklaces'));
+const Earrings = lazy(() => import('./pages/categories/Earrings'));
+const Bracelets = lazy(() => import('./pages/categories/Bracelets'));
+
+// Custom Design Pages
+const CustomDesigns = lazy(() => import('./pages/custom-designs/CustomDesigns'));
+const CustomProcess = lazy(() => import('./pages/custom-designs/Process'));
+const CustomGallery = lazy(() => import('./pages/custom-designs/Gallery'));
+const CustomEngagement = lazy(() => import('./pages/custom-designs/Engagement'));
 
 // Contact Section
 const Contact = lazy(() => import('./pages/Contact'));
@@ -37,6 +52,10 @@ const Appointment = lazy(() => import('./pages/contact/Appointment'));
 
 // Payment Page
 const Payment = lazy(() => import('./pages/Payment'));
+
+// Legal Pages
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfUse = lazy(() => import('./pages/TermsOfUse'));
 
 function App() {
   const [initialLoading, setInitialLoading] = useState(true);
@@ -57,7 +76,7 @@ function App() {
 
   return (
     <Router>
-      <ScrollRestoration /> {/* Add ScrollRestoration to reset scroll position on navigation */}
+      <ScrollRestoration />
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
@@ -72,18 +91,35 @@ function App() {
               <Route path="/about/team" element={<Team />} />
               <Route path="/about/news" element={<News />} />
               
-              {/* Collections main page */}
-              <Route path="/collections" element={<Collections />} />
+              {/* New gemstones routes */}
+              <Route path="/gemstones" element={<Gemstones />} />
+              <Route path="/gemstones/precious" element={<PreciousGemstones />} />
+              <Route path="/gemstones/semi-precious" element={<SemiPreciousGemstones />} />
+              <Route path="/gemstones/precious/blue-sapphire" element={<BlueSapphire />} />
+              <Route path="/gemstones/precious/emerald" element={<Emerald />} />
+              <Route path="/gemstones/precious/ruby" element={<Ruby />} />
+              {/* Add other gemstone routes as needed */}
               
-              {/* Gemstone collections */}
-              <Route path="/collections/precious-gemstones" element={<PreciousGemstones />} />
-              <Route path="/collections/semi-precious-gemstones" element={<SemiPreciousGemstones />} />
+              {/* New jewelry routes */}
+              <Route path="/jewelry" element={<Jewelry />} />
+              <Route path="/jewelry/gold" element={<GoldJewelry />} />
+              <Route path="/jewelry/platinum" element={<PlatinumJewelry />} />
+              <Route path="/jewelry/silver-palladium" element={<SilverPalladiumJewelry />} />
+              {/* Add subcategory jewelry routes as needed */}
               
-              {/* Jewelry collections */}
-              <Route path="/collections/gold-jewelry" element={<GoldJewelry />} />
-              <Route path="/collections/platinum-jewelry" element={<PlatinumJewelry />} />
-              <Route path="/collections/silver-palladium" element={<SilverPalladiumJewelry />} />
-              <Route path="/collections/custom-designs" element={<CustomDesigns />} />
+              {/* New category routes */}
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/categories/rings" element={<Rings />} />
+              <Route path="/categories/necklaces" element={<Necklaces />} />
+              <Route path="/categories/earrings" element={<Earrings />} />
+              <Route path="/categories/bracelets" element={<Bracelets />} />
+              {/* Add other category routes as needed */}
+              
+              {/* Custom design routes */}
+              <Route path="/custom-designs" element={<CustomDesigns />} />
+              <Route path="/custom-designs/process" element={<CustomProcess />} />
+              <Route path="/custom-designs/gallery" element={<CustomGallery />} />
+              <Route path="/custom-designs/engagement" element={<CustomEngagement />} />
               
               {/* Contact routes */}
               <Route path="/contact" element={<Contact />} />
@@ -94,11 +130,15 @@ function App() {
               {/* Payment route */}
               <Route path="/payment" element={<Payment />} />
               
+              {/* Legal Pages */}
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-use" element={<TermsOfUse />} />
+              
             </Routes>
           </Suspense>
         </main>
         <Footer />
-        <ScrollToTop /> {/* Add the ScrollToTop button */}
+        <ScrollToTop />
       </div>
     </Router>
   );

@@ -2,160 +2,43 @@
 import React from 'react';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
-import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
-import TeamHeroImage from '../../assets/images/hero-bg.gif'; // Add this image
-import CEOImage from '../../assets/images/about/haris.gif'; // Same as used in About.jsx
-import MustafaAlHassoun from '../../assets/images/about/team/mustafa-al-hassoun.gif'; // Add this image
-import JasanMurugesan from '../../assets/images/about/team/jasan-murugesan.gif'; // Add this image
-import TunkuAzwil from '../../assets/images/about/team/tunku-azwil.gif'; // Add this image
-import AliubKhaidarov from '../../assets/images/about/team/aliub-khaidarov.gif'; // Add this image
-import MinasAnastasi from '../../assets/images/about/team/minas-anastasi.gif'; // Add this image
-import FathimaShafna from '../../assets/images/about/team/fathima-shafna.gif'; // Add this image
-import SanaaHaris from '../../assets/images/about/team/sanaa-haris.gif'; // Add this image
-import FathimaZainab from '../../assets/images/about/team/fathima-zainab.gif'; // Add this image
-import SabrinaIsmail from '../../assets/images/about/team/sabrina-ismail.gif'; // Add this image
-import MohamedJavad from '../../assets/images/about/team/mohamed-javad.gif'; // Add this image
-import MaheshRamalingam from '../../assets/images/about/team/mahesh-ramalingam.gif'; // Add this image
-import MohamedYasir from '../../assets/images/about/team/mohamed-yasir.gif'; // Add this image
+
+// Import data
+import { teamData } from '../../data/mockdata';
+
+// Import hero image
+import TeamHeroImage from '../../assets/images/about/bg13.jpg';
 
 const Team = () => {
-  // Board of Directors
-  const boardMembers = [
-    {
-      name: 'Mohamed Haris Yusuf',
-      position: 'CEO & Managing Director',
-      image: CEOImage
-    },
-    {
-      name: 'Dr. T A Mustafa Al-Hassoun',
-      position: 'Finance Director',
-      image: MustafaAlHassoun
-    },
-    {
-      name: 'Dato\' Dr. Jasan Murugesan',
-      position: 'International Coordinating Director',
-      image: JasanMurugesan
-    },
-    {
-      name: 'Tunku Azwil',
-      position: 'Director',
-      image: TunkuAzwil
-    },
-    {
-      name: 'Aliub Khaidarov',
-      position: 'Business Development Director',
-      image: AliubKhaidarov
-    },
-    {
-      name: 'Minas Anastasi Mina',
-      position: 'International Marketing Director',
-      image: MinasAnastasi
-    }
-  ];
-  
-  // Management Team
-  const managementTeam = [
-    {
-      name: 'Fathima Shafna Haris',
-      position: 'Diamond Grading Specialist',
-      image: FathimaShafna
-    },
-    {
-      name: 'Sanaa Haris',
-      position: 'Operation Director',
-      image: SanaaHaris
-    },
-    {
-      name: 'Fathima Zainab Haris',
-      position: 'Jewelry Designer',
-      image: FathimaZainab
-    },
-    {
-      name: 'Sabrina binti Ismail',
-      position: 'Secretary',
-      image: SabrinaIsmail
-    },
-    {
-      name: 'Mohamed Javad',
-      position: 'Business Coordinating Director',
-      image: MohamedJavad
-    },
-    {
-      name: 'Mr. Mahesh Ramalingam',
-      position: 'Accountant',
-      image: MaheshRamalingam
-    },
-    {
-      name: 'Mohamed Yasir',
-      position: 'Web Designer',
-      image: MohamedYasir
-    }
-  ];
-  
-  // Department teams
-  const departmentTeams = [
-    {
-      department: 'Design Studio',
-      description: 'Our talented designers blend traditional aesthetics with contemporary trends to create timeless jewelry pieces.',
-      count: '12 Designers'
-    },
-    {
-      department: 'Master Craftspeople',
-      description: 'With decades of experience, our master jewelers transform designs into exquisite pieces with meticulous attention to detail.',
-      count: '25 Artisans'
-    },
-    {
-      department: 'Gemologists',
-      description: 'Our expert gemologists select and grade only the finest Ceylon gems, ensuring exceptional quality and value.',
-      count: '8 Specialists'
-    },
-    {
-      department: 'Quality Control',
-      description: 'Every piece undergoes rigorous quality checks to ensure it meets our exacting standards before reaching our customers.',
-      count: '10 Experts'
-    },
-    {
-      department: 'Customer Experience',
-      description: 'Dedicated to providing a personalized luxury experience, our team guides clients through selecting their perfect piece.',
-      count: '15 Advisors'
-    },
-    {
-      department: 'Mining Operations',
-      description: 'Our mining team in Sri Lanka employs sustainable practices to source the finest Ceylon gemstones directly from the earth.',
-      count: '30 Professionals'
-    }
-  ];
+  const { introduction, boardMembers, managementTeam, departmentTeams } = teamData;
 
   return (
     <div className="bg-white">
-      {/* Animated Header and Hero Section */}
-      <AnimatedPageHeader 
-        title="Our Team" 
-        subtitle="Meet the dedicated professionals who bring the Harrico vision to life"
-        backgroundImage={TeamHeroImage}
-      />
+      {/* Simple Image Header */}
+      <div className="w-full h-96 relative">
+        <img 
+          src={TeamHeroImage} 
+          alt="Harrico Team" 
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       {/* Team Introduction */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6">
           <SectionTitle 
-            title="The People Behind Our Excellence" 
-            subtitle="OUR TEAM" 
+            title={introduction.title}
+            subtitle={introduction.subtitle}
             alignment="center"
             maxWidth="2xl"
           />
           
           <div className="max-w-3xl mx-auto mt-8 text-center">
-            <p className="text-gray-700 mb-6">
-              Our manufacturing facilities employ highly trained craftspeople with decades of collective experience. 
-              Many of our master jewelers have been trained in traditional techniques passed down through 
-              generations, creating a perfect synthesis of heritage and innovation.
-            </p>
-            <p className="text-gray-700">
-              From our skilled artisans to our gemological experts, each member of the Harrico team 
-              contributes to our legacy of excellence, ensuring we deliver exceptional quality and value 
-              to our customers worldwide.
-            </p>
+            {introduction.content.map((paragraph, index) => (
+              <p key={index} className={`text-gray-700 ${index < introduction.content.length - 1 ? 'mb-6' : ''}`}>
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </section>
