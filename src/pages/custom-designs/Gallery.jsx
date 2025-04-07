@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
 import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
-import GalleryHeroImage from '../../assets/images/collections/custom/gallery-hero.jpg';
+import GalleryHeroImage from '../../assets/images/collections/custom/bridal-collection.jpg';
 
 const Gallery = () => {
   // Gallery categories for filtering

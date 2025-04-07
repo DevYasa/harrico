@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
 import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
-import ProcessHeroImage from '../../assets/images/collections/custom/process-hero.jpg';
+import ProcessHeroImage from '../../assets/images/collections/custom/bridal-collection.jpg';
 
 const Process = () => {
   // Design process steps with more detailed descriptions

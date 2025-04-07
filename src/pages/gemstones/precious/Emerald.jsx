@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../../../components/common/SectionTitle';
 import GoldDivider from '../../../components/common/GoldDivider';
 import AnimatedPageHeader from '../../../components/common/AnimatedPageHeader';
-import EmeraldHeroImage from '../../../assets/images/collections/gems/emerald-hero.jpg';
+import EmeraldHeroImage from '../../../assets/images/collections/gems/blue-sapphire-hero.png';
 // Import the gemstone data
 import { gemstoneData, jewelryData } from '../../../data/mockdata';
 // Import shared components

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/common/SectionTitle';
 import GoldDivider from '../../components/common/GoldDivider';
 import AnimatedPageHeader from '../../components/common/AnimatedPageHeader';
-import EngagementHeroImage from '../../assets/images/collections/custom/engagement-hero.jpg';
+import EngagementHeroImage from '../../assets/images/collections/custom/bridal-collection.jpg';
 
 const Engagement = () => {
   // Engagement ring styles
